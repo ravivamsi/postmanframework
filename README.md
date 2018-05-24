@@ -12,9 +12,10 @@ Node Application to run the Postman Collection and generate Newman Reports
     6. [Configure app.js and package.json](#configure-app.js-and-package.json)
 
 2. [Command Line Execution of Collections](#command-line-execution-of-collections)
-    1. [Run the Collection](#run-the-collection)
-    2. [Run the Collection with Environment](#run-the-collection-with-environment)
-    3. [Run the Collection with Environment and Generate Newman Report](#run-the-collection-with-environment-and-generate-newman-report)
+    1. [Run the Postman Collection](#run-the-postman-collection)
+    2. [Run Multiple Postman Collections(#run-multiple-postman-collections)
+    3. [Run the Postman Collection with Environment](#run-the-postman-collection-with-environment)
+    4. [Run the Collection with Environment and Generate Newman Report](#run-the-collection-with-environment-and-generate-newman-report)
 
 3. [Node Application Execution of Collections]
     1. [Run the Collection as Node app](#run-the-collection-as-node-app)
@@ -59,6 +60,11 @@ $ npm install newman --global;
 ### Run the Postman Collection
 ```terminal
 $ newman run <collection-file-source>
+```
+
+### Run Multiple Postman Collections
+```terminal
+$ for collection in ./PostmanCollections/*; do newman run "$collection" --environment ./PostmanEnvironments/Test.postman_environment.json' -r cli; done
 ```
 
 ### Run the Postman Collection with Environment
