@@ -1,23 +1,24 @@
-# postmanframework
-Node Application to run the Postman Collection and generate Newman Reports
+# Quick API Automation Framework using Postman and Newman
+Node Application to run the Postman Collection and respective Environments and generate Newman Reports
 
 ## Contents
 
 1. [Pre-Requisites](#pre-requisites)
     1. [Install NodeJS and NPM](#install-nodejs-and-npm)
-    2. [Newman]
-    3. [Postman Collection]
-    4. [Assertions - Postman Test Scripts]
-    5. [Postman Environments]
-    6. [Configure app.js and package.json]
+    2. [Newman](#newman)
+    3. [Postman Collection](#postman-collection)
+    4. [Assertions - Postman Test Scripts](#assertion-postman-test-scripts)
+    5. [Postman Environments](#postman-environments)
+    6. [Configure app.js and package.json](#configure-app.js-and-package.json)
 
 2. [Command Line Execution of Collections](#command-line-execution-of-collections)
-    1. [Run the Collection]
-    2. [Run the Collection with Environment]
-    3. [Run the Collection with Environment and Generate Newman Report]
+    1. [Run the Postman Collection](#run-the-postman-collection)
+    2. [Run Multiple Postman Collections](#run-multiple-postman-collections)
+    3. [Run the Postman Collection with Environment](#run-the-postman-collection-with-environment)
+    4. [Run the Collection with Environment and Generate Newman Report](#run-the-collection-with-environment-and-generate-newman-report)
 
 3. [Node Application Execution of Collections]
-    1. [Run the Collection as Node app]
+    1. [Run the Collection as Node app](#run-the-collection-as-node-app)
 ---
 
 ## Pre Requisites
@@ -44,7 +45,7 @@ $ npm install newman --global;
 ### Postman Collection 
 
 
-### Assertion - Postman Test Scripts 
+### Assertion Postman Test Scripts 
 
 
 ### Postman Environments
@@ -59,6 +60,11 @@ $ npm install newman --global;
 ### Run the Postman Collection
 ```terminal
 $ newman run <collection-file-source>
+```
+
+### Run Multiple Postman Collections
+```terminal
+$ for collection in ./PostmanCollections/*; do newman run "$collection" --environment ./PostmanEnvironments/Test.postman_environment.json' -r cli; done
 ```
 
 ### Run the Postman Collection with Environment
