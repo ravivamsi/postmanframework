@@ -11,7 +11,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "00c55bac-335b-4106-8ecd-ccc1a5706b69",
+						"id": "ad82da39-9683-4433-8415-22358795b418",
 						"type": "text/javascript",
 						"exec": [
 							"// Status Code Assertion ",
@@ -26,11 +26,14 @@
 							"var response = JSON.parse(responseBody);",
 							"",
 							"",
+							"// Count the number of records in the response array",
+							"",
+							"var count = responseBody.length;",
+							"",
 							"// Copy to an environment variable",
 							"",
-							"pm.environment.set(\"getpostbyIdresponseBody\", JSON.stringify(response));",
-							"",
-							"",
+							"pm.environment.set(\"getpostsresponseBody\", JSON.stringify(response));",
+							"pm.environment.set(\"getpostsrecordcount\", count);",
 							"",
 							"// Schema Definition",
 							"",
@@ -62,9 +65,6 @@
 							"pm.test('Posts Schema is valid', function() { ",
 							"    pm.expect(tv4.validate(response, multiplepostsschema, false, true)).to.be.true;",
 							"});",
-							"",
-							"",
-							"",
 							"",
 							"",
 							"// Response Time Assertion",
@@ -105,7 +105,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "51f6d0da-0ad8-4061-84b6-e053907a2df9",
+						"id": "553e97c2-35cb-45b4-accd-3a0774c7bce5",
 						"type": "text/javascript",
 						"exec": [
 							"// Status Code Assertion ",
@@ -120,15 +120,14 @@
 							"var response = JSON.parse(responseBody);",
 							"",
 							"",
-							"// Count the number of records in the response array",
 							"",
-							"var count = responseBody.length;",
 							"",
 							"",
 							"// Copy to an environment variable",
+							"pm.environment.set(\"getpostbyIdresponseBody\", JSON.stringify(response));",
 							"",
-							"pm.environment.set(\"getpostsresponseBody\", JSON.stringify(response));",
-							"pm.environment.set(\"getpostsrecordcount\", count);",
+							"",
+							"",
 							"",
 							"",
 							"// Schema Definition",
@@ -190,6 +189,373 @@
 					"path": [
 						"posts",
 						"1"
+					]
+				},
+				"description": "https://jsonplaceholder.typicode.com/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Post By ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6b169951-c7e9-436f-af25-c4c028c53e77",
+						"type": "text/javascript",
+						"exec": [
+							"// Status Code Assertion ",
+							"",
+							"pm.test(\"Status code Assertion for 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"// Get the Response Body in the JSON",
+							"",
+							"var response = JSON.parse(responseBody);",
+							"",
+							"",
+							"",
+							"// Response Time Assertion",
+							"",
+							"pm.test(\"Response time is less than 1 sec\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});",
+							"",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts/1",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts",
+						"1"
+					]
+				},
+				"description": "https://jsonplaceholder.typicode.com/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "GET Post By ID Comments",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "563b51ce-3452-4a18-9356-f64a8f622edc",
+						"type": "text/javascript",
+						"exec": [
+							"// Status Code Assertion ",
+							"",
+							"pm.test(\"Status code Assertion for 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"// Get the Response Body in the JSON",
+							"",
+							"var response = JSON.parse(responseBody);",
+							"",
+							"// Count the number of records in the response array",
+							"",
+							"var count = responseBody.length;",
+							"",
+							"",
+							"// Copy to an environment variable",
+							"",
+							"pm.environment.set(\"getcommentsresponseBody\", JSON.stringify(response));",
+							"pm.environment.set(\"getcommentsrecordcount\", count);",
+							"",
+							"// Schema Definition",
+							"",
+							"var multiplecommentsschema = {",
+							"  \"title\": \"MultipleCommentsSchema\",",
+							"  \"type\": \"array\",",
+							"  \"items\": {",
+							"    \"type\": \"object\",",
+							"    \"properties\": {",
+							"      \"postId\": {",
+							"        \"type\": \"integer\",",
+							"      },",
+							"      \"id\": {",
+							"        \"type\": \"integer\",",
+							"      },",
+							"      \"name\": {",
+							"        \"type\": \"string\",",
+							"      },",
+							"      \"email\": {",
+							"        \"type\": \"string\",",
+							"      },",
+							"      \"body\": {",
+							"        \"type\": \"string\",",
+							"      }",
+							"    }",
+							"  }",
+							"};",
+							"",
+							"",
+							"// Response Body - Schema Validation",
+							"",
+							"pm.test('Posts Schema is valid', function() { ",
+							"    pm.expect(tv4.validate(response, multiplecommentsschema, false, true)).to.be.true;",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"// Response Time Assertion",
+							"",
+							"pm.test(\"Response time is less than 1 sec\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});",
+							"",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts/1/comments",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts",
+						"1",
+						"comments"
+					]
+				},
+				"description": "https://jsonplaceholder.typicode.com/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "GET Comments For PostID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "88e6232b-502a-48ad-8eae-0325f130abdf",
+						"type": "text/javascript",
+						"exec": [
+							"// Status Code Assertion ",
+							"",
+							"pm.test(\"Status code Assertion for 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"// Get the Response Body in the JSON",
+							"",
+							"var response = JSON.parse(responseBody);",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"// Copy to an environment variable",
+							"pm.environment.set(\"getcommentsforpostIdresponseBody\", JSON.stringify(response));",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"// Schema Definition",
+							"",
+							"var commentsByPostIdSchema = {",
+							"  \"title\": \"MultipleCommentsSchema\",",
+							"  \"type\": \"array\",",
+							"  \"items\": {",
+							"    \"type\": \"object\",",
+							"    \"properties\": {",
+							"      \"postId\": {",
+							"        \"type\": \"integer\",",
+							"      },",
+							"      \"id\": {",
+							"        \"type\": \"integer\",",
+							"      },",
+							"      \"name\": {",
+							"        \"type\": \"string\",",
+							"      },",
+							"      \"email\": {",
+							"        \"type\": \"string\",",
+							"      },",
+							"      \"body\": {",
+							"        \"type\": \"string\",",
+							"      }",
+							"    }",
+							"  }",
+							"};",
+							"",
+							"",
+							"// Response Body - Schema Validation",
+							"",
+							"pm.test('Posts Schema is valid', function() { ",
+							"    pm.expect(tv4.validate(response, commentsByPostIdSchema, false, true)).to.be.true;",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"// Response Time Assertion",
+							"",
+							"pm.test(\"Response time is less than 1 sec\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});",
+							"",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/comments?postId=1",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"comments"
+					],
+					"query": [
+						{
+							"key": "postId",
+							"value": "1"
+						}
+					]
+				},
+				"description": "https://jsonplaceholder.typicode.com/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "GET Posts For UserID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7741242a-5bd6-4279-8b02-2438d2ccc4a8",
+						"type": "text/javascript",
+						"exec": [
+							"// Status Code Assertion ",
+							"",
+							"pm.test(\"Status code Assertion for 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"// Get the Response Body in the JSON",
+							"",
+							"var response = JSON.parse(responseBody);",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"// Copy to an environment variable",
+							"pm.environment.set(\"getpostsforUserIdresponseBody\", JSON.stringify(response));",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"// Schema Definition",
+							"",
+							"var commentsByPostIdSchema = {",
+							"  \"title\": \"Mutiple Posts Schema Definition of Response Body\",",
+							"  \"type\": \"array\",",
+							"  \"items\": {",
+							"    \"type\": \"object\",",
+							"    \"properties\": {",
+							"      \"userId\": {",
+							"        \"type\": \"integer\",",
+							"      },",
+							"      \"id\": {",
+							"        \"type\": \"integer\",",
+							"      },",
+							"      \"title\": {",
+							"        \"type\": \"string\",",
+							"      },",
+							"      \"body\": {",
+							"        \"type\": \"string\",",
+							"      }",
+							"    }",
+							"  }",
+							"};",
+							"",
+							"// Response Body - Schema Validation",
+							"",
+							"pm.test('Posts Schema is valid', function() { ",
+							"    pm.expect(tv4.validate(response, commentsByPostIdSchema, false, true)).to.be.true;",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"// Response Time Assertion",
+							"",
+							"pm.test(\"Response time is less than 1 sec\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});",
+							"",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts?userId=1",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
 					]
 				},
 				"description": "https://jsonplaceholder.typicode.com/posts"
