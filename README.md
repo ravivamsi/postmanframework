@@ -7,30 +7,10 @@ Node Application to run the Postman Collection and generate Newman Reports
     1. [Install NodeJS](#install-nodejs)
     2. [NPM]
     3. [Newman]
-
-2. [Command line options](#command-line-options)
-    1. [newman-run](#newman-run-collection-file-source-options)
-        1. [Configuring reporters](#configuring-reporters)
-            1. [CLI reporter options](#cli-reporter-options)
-            2. [JSON reporter options](#json-reporter-options)
-            3. [HTML reporter options](#html-reporter-options)
-            4. [JUnit reporter options](#junitxml-reporter-options)
-            5. [Creating and using custom reporters](#creating-and-using-custom-reporters)
-        2. [SSL client certificates](#ssl-client-certificates)
-    2. [Proxy](#proxy)
-
-3. [API Reference](#api-reference)
-    1. [newman run](#newmanrunoptions-object--callback-function--run-eventemitter)
-    2. [Run summary object](#newmanruncallbackerror-object--summary-object)
-    3. [Events emitted during a collection run](#newmanrunevents)
-
-4. [File uploads](#file-uploads)
-
-5. [Using Newman with the Postman API](#using-newman-with-the-postman-api)
-
-6. [Community Support](#community-support)
-
-7. [License](#license)
+    4. [Postman Collection]
+    5. [Assertions - Postman Test Scripts]
+    6. [Postman Environments]
+    7. [Configure app.js and package.json]
 
 ---
 
@@ -336,7 +316,7 @@ The `callback` parameter of the `newman.run` function receives two arguments: (1
 | summary.globals           | This object holds details about the globals used within the collection run namespace.<br /><br />Type: `object` |
 | summary.run               | A cumulative run summary object that provides information on .<br /><br />Type: `object` |
 | summary.run.stats         | An object which provides details about the total, failed, and pending counts for pre request scripts, tests, assertions, requests, and more.<br /><br />Type: `object` |
-| summary.run.failures      | An array of failure objects, with each element holding details, including the assertion that failed, and the request.<br /><br />Type: `array.<object>` |
+| sumary.run.failures      | An array of failure objects, with each element holding details, including the assertion that failed, and the request.<br /><br />Type: `array.<object>` |
 | summary.run.executions    | This object contains information about each request, along with it's associated activities within the scope of the current collection run.<br /><br />Type: `array.<object>` |
 
 ### newman.run~events
@@ -344,41 +324,17 @@ The `callback` parameter of the `newman.run` function receives two arguments: (1
 Newman triggers a whole bunch of events during the run.
 
 ```javascript
+var newman = require('newman'); 
+// require newman in your project
+
+// call newman.run to pass `options` object and wait for callback
 newman.run({
-    collection: require('./sample-collection.json'),
-    iterationData: [{ "var": "data", "var_beta": "other_val" }],
-    globals: {
-        "id": "5bfde907-2a1e-8c5a-2246-4aff74b74236",
-        "name": "test-env",
-        "values": [
-            {
-                "key": "alpha",
-                "value": "beta",
-                "type": "text",
-                "enabled": true
-            }
-        ],
-        "timestamp": 1404119927461,
-        "_postman_variable_scope": "globals",
-        "_postman_exported_at": "2016-10-17T14:31:26.200Z",
-        "_postman_exported_using": "Postman/4.8.0"
-    },
-    environment: {
-        "id": "4454509f-00c3-fd32-d56c-ac1537f31415",
-        "name": "test-env",
-        "values": [
-            {
-                "key": "foo",
-                "value": "bar",
-                "type": "text",
-                "enabled": true
-            }
-        ],
-        "timestamp": 1404119927461,
-        "_postman_variable_scope": "environment",
-        "_postman_exported_at": "2016-10-17T14:26:34.940Z",
-        "_postman_exported_using": "Postman/4.8.0"
-    }
+    collection: require('./PostmanCollection/Sample.postman_collection.json'),
+    environment: require('./PostmanEnvironment/Test.postman_environment.json'),
+    reporters: ['html','cli'],
+    reporter : { html : { export : './report/htmlReport.html'}},
+    insecure: true, // allow self-signed certs, required in postman too
+    timeout: 180000  // set time out
 }).on('start', function (err, args) { // on start of run, log to console
     console.log('running a collection...');
 }).on('done', function (err, summary) {
@@ -413,78 +369,4 @@ argument object.**
 | console                   | Every time a `console` function is called from within any script, this event is propagated |
 | exception                 | When any asynchronous error happen in `scripts` this event is triggered |
 | beforeDone                | An event that is triggered prior to the completion of the run |
-| done                      | This event is emitted when a collection run has completed, with or without errors |
-
-<!-- TODO: write about callback summary -->
-
----
-
-## File uploads
-
-Newman also supports file uploads for request form data. The files must be present in the
-current working directory. Your collection must also contain the filename in
-the "src" attribute of the request.
-
-In this collection, `sample-file.txt` should be present in the current working directory.
-```json
-{
-    "info": {
-        "name": "file-upload"
-    },
-    "item": [
-        {
-            "request": {
-                "url": "https://postman-echo.com/post",
-                "method": "POST",
-                "body": {
-                    "mode": "formdata",
-                    "formdata": [
-                        {
-                            "key": "file",
-                            "type": "file",
-                            "enabled": true,
-                            "src": "sample-file.txt"
-                        }
-                    ]
-                }
-            }
-        }
-    ]
-}
-```
-
-```terminal
-$ ls
-file-upload.postman_collection.json  sample-file.txt
-
-$ newman run file-upload.postman_collection.json
-```
-
-## Using Newman with the Postman API
-
-1 [Generate an API key](https://app.getpostman.com/dashboard/integrations)<br/>
-2 Fetch a list of your collections from: `https://api.getpostman.com/collections?apikey=$apiKey`<br/>
-3 Get the collection link via it's `uid`: `https://api.getpostman.com/collections/$uid?apikey=$apiKey`<br/>
-4 Obtain the environment URI from: `https://api.getpostman.com/environments?apikey=$apiKey`<br/>
-5 Using the collection and environment URIs acquired in steps 3 and 4, run the collection as follows:
-```
-newman run "https://api.getpostman.com/collections/$uid?apikey=$apiKey" \
-    --environment "https://api.getpostman.com/environments/$uid?apikey=$apiKey"
-```
-
----
-
-## Community Support
-
-<img src="https://avatars1.githubusercontent.com/u/3220138?v=3&s=120" align="right" />
-If you are interested in talking to the Postman team and fellow Newman users, you can find us on our <a href="https://community.getpostman.com">Postman Community Forum</a>. Feel free to drop by and say hello. You'll find us posting about upcoming features and beta releases, answering technical support questions, and contemplating world peace.  
-
-Sign in using your Postman account to participate in the discussions and don't forget to take advantage of the <a href="https://community.getpostman.com/search?q=newman">search bar</a> - the answer to your question might already be waiting for you! Don’t want to log in? Then lurk on the sidelines and absorb all the knowledge.
-
----
-
-## License
-This software is licensed under Apache-2.0. Copyright Postdot Technologies, Inc. See the [LICENSE.md](LICENSE.md) file for more information.
-
-[![Analytics](https://ga-beacon.appspot.com/UA-43979731-9/newman/readme)](https://www.getpostman.com)
-
+| done                      | This event is emitted when a collection run has completed, with or without error |
