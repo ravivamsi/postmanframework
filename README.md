@@ -1,5 +1,5 @@
-# postmanframework
-Node Application to run the Postman Collection and generate Newman Reports
+# Quick API Automation Framework using Postman and Newman
+Node Application to run the Postman Collection and respective Environments and generate Newman Reports
 
 ## Contents
 
@@ -13,7 +13,7 @@ Node Application to run the Postman Collection and generate Newman Reports
 
 2. [Command Line Execution of Collections](#command-line-execution-of-collections)
     1. [Run the Postman Collection](#run-the-postman-collection)
-    2. [Run Multiple Postman Collections(#run-multiple-postman-collections)
+    2. [Run Multiple Postman Collections](#run-multiple-postman-collections)
     3. [Run the Postman Collection with Environment](#run-the-postman-collection-with-environment)
     4. [Run the Collection with Environment and Generate Newman Report](#run-the-collection-with-environment-and-generate-newman-report)
 
