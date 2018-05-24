@@ -4,69 +4,76 @@ Node Application to run the Postman Collection and generate Newman Reports
 ## Contents
 
 1. [Pre-Requisites](#pre-requisites)
-    1. [Install NodeJS](#install-nodejs)
-    2. [NPM]
-    3. [Newman]
-    4. [Postman Collection]
-    5. [Assertions - Postman Test Scripts]
-    6. [Postman Environments]
-    7. [Configure app.js and package.json]
+    1. [Install NodeJS and NPM](#install-nodejs-and-npm)
+    2. [Newman]
+    3. [Postman Collection]
+    4. [Assertions - Postman Test Scripts]
+    5. [Postman Environments]
+    6. [Configure app.js and package.json]
 
+2. [Command Line Execution of Collections](#command-line-execution-of-collections)
+    1. [Run the Collection]
+    2. [Run the Collection with Environment]
+    3. [Run the Collection with Environment and Generate Newman Report]
+
+3. [Node Application Execution of Collections]
+    1. [Run the Collection as Node app]
 ---
 
 ## Pre Requisites
 
 To run Newman, ensure that you have NodeJS >= v4. A copy of the NodeJS installable can be downloaded from [https://nodejs.org/en/download/package-manager](https://nodejs.org/en/download/package-manager).
 
-The easiest way to install Newman is using NPM. If you have NodeJS installed, it is most likely that you have NPM
-installed as well.
+### Install NodeJS and NPM
 
-```terminal
+#### Windows
+http://blog.teamtreehouse.com/install-node-js-npm-windows
+
+
+#### MacOS 
+http://blog.teamtreehouse.com/install-node-js-npm-mac
+
+### Newman
+
+Open you Node Terminal and install globally
+
+```termianl
 $ npm install newman --global;
 ```
 
-The `newman run` command allows you to specify a collection to be run. You can easily export your Postman
-Collection as a json file from the [Postman App](https://www.getpostman.com/apps) and run it using Newman.
+### Postman Collection 
 
-```terminal
-$ newman run examples/sample-collection.json;
-```
 
-If your collection file is available as an URL (such as from our [Cloud API service](https://api.getpostman.com)),
-Newman can fetch your file and run it as well.
+### Assertion - Postman Test Scripts 
 
-```terminal
-$ newman run https://www.getpostman.com/collections/631643-f695cab7-6878-eb55-7943-ad88e1ccfd65-JsLv;
-```
 
-For the complete list of options, refer the [Commandline Options](#commandline-options) section below.
+### Postman Environments
 
-![terminal-demo](https://raw.githubusercontent.com/postmanlabs/postmanlabs.github.io/develop/global-artefacts/newman-terminal.gif)
 
-### Install NodeJS
-
-Newman can be easily used within your JavaScript projects as a NodeJS module. The entire set of Newman CLI functionality is available for programmatic use as well. The following example runs a collection by reading a JSON collection file stored on disk.
-
-```javascript
-var newman = require('newman'); // require newman in your project
-
-// call newman.run to pass `options` object and wait for callback
-newman.run({
-    collection: require('./sample-collection.json'),
-    reporters: 'cli'
-}, function (err) {
-	if (err) { throw err; }
-    console.log('collection run complete!');
-});
-```
-
-**Note:** The newman v2.x `.execute` function has been discontinued.
+### Configure app.js and package.json
 
 ---
 
-## Command line Options
+## Command line Execution of Collections
 
-### `newman run <collection-file-source> [options]`
+### Run the Postman Collection
+```terminal
+$ newman run <collection-file-source>
+```
+
+### Run the Postman Collection with Environment
+``` terminal
+$ newman run <collection-file-source> -e <environment-file-source>
+```
+
+### Run the Postman Collection with Environment and Generate Newman Report
+```terminal
+$ newman run <collection-file-source> -e <environment-file-source> -r report.html
+```
+
+### CommandLine Options (Source: https://www.npmjs.com/package/newman)
+
+`newman run <collection-file-source> [options]`
 
 - `-e <source>`, `--environment <source>`<br />
   Specify an environment file path or URL. Environments provide a set of variables that one can use within collections.
