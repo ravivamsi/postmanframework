@@ -12,8 +12,8 @@ async.parallel([
         newman.run({
     collection: require('./PostmanCollection/Sample.postman_collection.json'),
     environment: require('./PostmanEnvironment/Test.postman_environment.json'),
-    reporters: ['html','cli'],
-    reporter : { html : { export : './report/ParallelExecutionSampleReport.html'}},
+    reporters: ['html','cli','json'],
+    reporter : { html : { export : './report/html/ParallelExecutionSampleReport.html'}, json: { export: './report/json/ParallelExecutionSampleReport.json'}},
     insecure: true, // allow self-signed certs, required in postman too
     timeout: 180000  // set time out
 }).on('start', function (err, args) { // on start of run, log to console
@@ -31,8 +31,8 @@ async.parallel([
         newman.run({
     collection: require('./PostmanCollection/ZipCodes.postman_collection.json'),
     environment: require('./PostmanEnvironment/UAT.postman_environment.json'),
-    reporters: ['html','cli'],
-    reporter : { html : { export : './report/ParallelExecutionZipCodesReport.html'}},
+    reporters: ['html','cli','json'],
+    reporter : { html : { export : './report/html/ParallelExecutionZipCodesReport.html'}, json: { export: './report/json/ParallelExecutionZipCodesReport.json'}},
     insecure: true, // allow self-signed certs, required in postman too
     timeout: 180000  // set time out
 }).on('start', function (err, args) { // on start of run, log to console
@@ -50,8 +50,8 @@ async.parallel([
         newman.run({
     collection: require('./PostmanCollection/DictionaryMeanings.postman_collection.json'),
     environment: require('./PostmanEnvironment/Dev.postman_environment.json'),
-    reporters: ['html','cli'],
-    reporter : { html : { export : './report/ParallelExecutionDictionaryReport.html'}},
+    reporters: ['html','cli','json'],
+    reporter : { html : { export : './report/html/ParallelExecutionDictionaryReport.html'}, json: { export: './report/json/ParallelExecutionDictionaryReport.json'}},
     insecure: true, // allow self-signed certs, required in postman too
     timeout: 180000  // set time out
 }).on('start', function (err, args) { // on start of run, log to console

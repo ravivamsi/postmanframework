@@ -1,0 +1,2347 @@
+{
+  "collection": {
+    "_": {
+      "postman_id": "a1346b99-6b20-40f4-bd31-63d9288996be"
+    },
+    "item": [
+      {
+        "id": "88f02a99-f559-4137-b52e-5101e363c1c1",
+        "name": "Abbrevations",
+        "request": {
+          "description": {
+            "content": "http://localhost:8888/api/abbrevations/CS",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "http",
+            "path": [
+              "define",
+              "{{abbrevation}}"
+            ],
+            "host": [
+              "urbanscraper",
+              "herokuapp",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "GET",
+          "body": {}
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "102d058e-3aac-46f7-af94-0838d2518f56",
+              "type": "text/javascript",
+              "exec": [
+                "pm.test(\"Status code is 200\", function () {",
+                "    pm.response.to.have.status(200);",
+                "});",
+                "",
+                "pm.test(\"Response time is less than 1 sec\", function () {",
+                "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                "});",
+                "",
+                "",
+                "// Get the Response Body in the JSON",
+                "",
+                "var response = JSON.parse(responseBody);",
+                "",
+                "// Define Schema",
+                "",
+                "var dictionaryschema = ",
+                " {",
+                "  \"title\": \"DictionarySchema\",",
+                "  \"type\": \"object\",",
+                "  \"properties\": {",
+                "    \"id\": {",
+                "      \"type\": \"string\",",
+                "    },",
+                "    \"term\": {",
+                "      \"type\": \"string\",",
+                "    },",
+                "    \"url\": {",
+                "      \"type\": \"string\",",
+                "    },",
+                "    \"definition\": {",
+                "      \"type\": \"string\",",
+                "    },",
+                "    \"example\": {",
+                "      \"type\": \"string\",",
+                "    },",
+                "    \"author\": {",
+                "      \"type\": \"string\",",
+                "    },",
+                "    \"author_url\": {",
+                "      \"type\": \"string\",",
+                "    },",
+                "    \"posted\": {",
+                "      \"type\": \"string\",",
+                "    }",
+                "  }",
+                "};",
+                "",
+                "// Response Body - Schema Validation",
+                "",
+                "pm.test('Posts Schema is valid', function() { ",
+                "    pm.expect(tv4.validate(response, dictionaryschema, false, true)).to.be.true;",
+                "});",
+                ""
+              ],
+              "_lastExecutionId": "addd7a31-1011-489d-b0e5-9c4c840cadf7"
+            }
+          }
+        ]
+      },
+      {
+        "id": "87c1f696-0a48-4b8d-8aa2-56ed8ae5a177",
+        "name": "Dictionary",
+        "request": {
+          "description": {
+            "content": "http://localhost:8888/api/dictionary/fuck",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "http",
+            "path": [
+              "define",
+              "{{meaning}}"
+            ],
+            "host": [
+              "urbanscraper",
+              "herokuapp",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "GET",
+          "body": {}
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "9fbc975c-5db1-4e3c-bf45-e45798e25387",
+              "type": "text/javascript",
+              "exec": [
+                "pm.test(\"Status code is 200\", function () {",
+                "    pm.response.to.have.status(200);",
+                "});",
+                "",
+                "pm.test(\"Response time is less than 1 sec\", function () {",
+                "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                "});",
+                "",
+                "",
+                "// Get the Response Body in the JSON",
+                "",
+                "var response = JSON.parse(responseBody);",
+                "",
+                "// Define Schema",
+                "",
+                "var dictionaryschema = ",
+                " {",
+                "  \"title\": \"DictionarySchema\",",
+                "  \"type\": \"object\",",
+                "  \"properties\": {",
+                "    \"id\": {",
+                "      \"type\": \"string\",",
+                "    },",
+                "    \"term\": {",
+                "      \"type\": \"string\",",
+                "    },",
+                "    \"url\": {",
+                "      \"type\": \"string\",",
+                "    },",
+                "    \"definition\": {",
+                "      \"type\": \"string\",",
+                "    },",
+                "    \"example\": {",
+                "      \"type\": \"string\",",
+                "    },",
+                "    \"author\": {",
+                "      \"type\": \"string\",",
+                "    },",
+                "    \"author_url\": {",
+                "      \"type\": \"string\",",
+                "    },",
+                "    \"posted\": {",
+                "      \"type\": \"string\",",
+                "    }",
+                "  }",
+                "};",
+                "",
+                "// Response Body - Schema Validation",
+                "",
+                "pm.test('Posts Schema is valid', function() { ",
+                "    pm.expect(tv4.validate(response, dictionaryschema, false, true)).to.be.true;",
+                "});",
+                ""
+              ],
+              "_lastExecutionId": "74a85996-e1da-4d5c-a071-234d84ec10d5"
+            }
+          }
+        ]
+      }
+    ],
+    "event": [],
+    "variable": [],
+    "info": {
+      "id": "a1346b99-6b20-40f4-bd31-63d9288996be",
+      "name": "DictionaryMeanings",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    }
+  },
+  "environment": {
+    "_": {
+      "postman_variable_scope": "environment",
+      "postman_exported_at": "2018-05-25T13:14:48.107Z",
+      "postman_exported_using": "Postman/6.1.2"
+    },
+    "id": "2c571ff2-4891-4b57-8760-d2142ba1f8c5",
+    "name": "Dev",
+    "values": [
+      {
+        "description": {
+          "content": "",
+          "type": "text/plain"
+        },
+        "type": "any",
+        "value": "HTTPS",
+        "key": "abbrevation"
+      },
+      {
+        "description": {
+          "content": "",
+          "type": "text/plain"
+        },
+        "type": "any",
+        "value": "regression",
+        "key": "meaning"
+      }
+    ]
+  },
+  "globals": {
+    "id": "45fa1c3c-be8d-47c4-82a0-6ee97ca4dd05",
+    "values": []
+  },
+  "run": {
+    "stats": {
+      "iterations": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "items": {
+        "total": 2,
+        "pending": 0,
+        "failed": 0
+      },
+      "scripts": {
+        "total": 2,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequests": {
+        "total": 2,
+        "pending": 0,
+        "failed": 0
+      },
+      "requests": {
+        "total": 2,
+        "pending": 0,
+        "failed": 0
+      },
+      "tests": {
+        "total": 2,
+        "pending": 0,
+        "failed": 0
+      },
+      "assertions": {
+        "total": 6,
+        "pending": 0,
+        "failed": 3
+      },
+      "testScripts": {
+        "total": 2,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequestScripts": {
+        "total": 0,
+        "pending": 0,
+        "failed": 0
+      }
+    },
+    "timings": {
+      "responseAverage": 4524.5,
+      "started": 1527261556257,
+      "completed": 1527261565393
+    },
+    "executions": [
+      {
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 2,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "f19049e8-5a98-45ce-95cd-5197a2bde5d7",
+          "httpRequestId": "cd998e5a-584b-449f-a7e1-948755930bf5"
+        },
+        "item": {
+          "id": "88f02a99-f559-4137-b52e-5101e363c1c1",
+          "name": "Abbrevations",
+          "request": {
+            "description": {
+              "content": "http://localhost:8888/api/abbrevations/CS",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "http",
+              "path": [
+                "define",
+                "{{abbrevation}}"
+              ],
+              "host": [
+                "urbanscraper",
+                "herokuapp",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "102d058e-3aac-46f7-af94-0838d2518f56",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response time is less than 1 sec\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                  "});",
+                  "",
+                  "",
+                  "// Get the Response Body in the JSON",
+                  "",
+                  "var response = JSON.parse(responseBody);",
+                  "",
+                  "// Define Schema",
+                  "",
+                  "var dictionaryschema = ",
+                  " {",
+                  "  \"title\": \"DictionarySchema\",",
+                  "  \"type\": \"object\",",
+                  "  \"properties\": {",
+                  "    \"id\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"term\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"url\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"definition\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"example\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"author\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"author_url\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"posted\": {",
+                  "      \"type\": \"string\",",
+                  "    }",
+                  "  }",
+                  "};",
+                  "",
+                  "// Response Body - Schema Validation",
+                  "",
+                  "pm.test('Posts Schema is valid', function() { ",
+                  "    pm.expect(tv4.validate(response, dictionaryschema, false, true)).to.be.true;",
+                  "});",
+                  ""
+                ],
+                "_lastExecutionId": "addd7a31-1011-489d-b0e5-9c4c840cadf7"
+              }
+            }
+          ]
+        },
+        "request": {
+          "description": {
+            "content": "http://localhost:8888/api/abbrevations/CS",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "http",
+            "path": [
+              "define",
+              "HTTPS"
+            ],
+            "host": [
+              "urbanscraper",
+              "herokuapp",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.1.3"
+            },
+            {
+              "key": "Accept",
+              "value": "*/*"
+            },
+            {
+              "key": "Host",
+              "value": "urbanscraper.herokuapp.com"
+            },
+            {
+              "key": "accept-encoding",
+              "value": "gzip, deflate"
+            }
+          ],
+          "method": "GET",
+          "body": {}
+        },
+        "response": {
+          "id": "8e9e4f3c-82cc-4dc5-b369-7a81a2ba516c",
+          "status": "Internal Server Error ",
+          "code": 500,
+          "header": [
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "max-age=86399"
+            },
+            {
+              "key": "Expires",
+              "value": "Sat, 26 May 2018 15:19:27 GMT"
+            },
+            {
+              "key": "Content-Length",
+              "value": "80"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Server",
+              "value": "WEBrick/1.3.1 (Ruby/2.4.3/2017-12-14)"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 25 May 2018 15:19:28 GMT"
+            },
+            {
+              "key": "Via",
+              "value": "1.1 vegur"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              34,
+              58,
+              34,
+              83,
+              111,
+              109,
+              101,
+              116,
+              104,
+              105,
+              110,
+              103,
+              32,
+              119,
+              101,
+              110,
+              116,
+              32,
+              119,
+              114,
+              111,
+              110,
+              103,
+              32,
+              97,
+              108,
+              111,
+              110,
+              103,
+              32,
+              116,
+              104,
+              101,
+              32,
+              119,
+              97,
+              121,
+              46,
+              32,
+              73,
+              116,
+              32,
+              119,
+              97,
+              115,
+              32,
+              108,
+              111,
+              103,
+              103,
+              101,
+              100,
+              32,
+              116,
+              111,
+              32,
+              98,
+              101,
+              32,
+              108,
+              111,
+              111,
+              107,
+              101,
+              100,
+              32,
+              97,
+              116,
+              46,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 8850,
+          "responseSize": 80
+        },
+        "id": "88f02a99-f559-4137-b52e-5101e363c1c1",
+        "assertions": [
+          {
+            "assertion": "Status code is 200",
+            "error": {
+              "name": "AssertionError",
+              "index": 0,
+              "message": "expected response to have status code 200 but got 500",
+              "stack": "AssertionError: expected response to have status code 200 but got 500\n   at Object.eval sandbox-script.js:1:1)"
+            }
+          },
+          {
+            "assertion": "Response time is less than 1 sec",
+            "error": {
+              "name": "AssertionError",
+              "index": 1,
+              "message": "expected 8850 to be below 1000",
+              "stack": "AssertionError: expected 8850 to be below 1000\n   at Object.eval sandbox-script.js:2:1)"
+            }
+          },
+          {
+            "assertion": "Posts Schema is valid",
+            "error": {
+              "name": "AssertionError",
+              "index": 2,
+              "message": "expected false to be true",
+              "stack": "AssertionError: expected false to be true\n   at Object.eval sandbox-script.js:3:1)"
+            }
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "1656bbf4-f401-4903-9ecc-81e6d044e4c2",
+          "length": 2,
+          "cycles": 1,
+          "position": 1,
+          "iteration": 0,
+          "httpRequestId": "da5f4d9b-d10b-42a7-9343-e8f1e32b8937"
+        },
+        "item": {
+          "id": "87c1f696-0a48-4b8d-8aa2-56ed8ae5a177",
+          "name": "Dictionary",
+          "request": {
+            "description": {
+              "content": "http://localhost:8888/api/dictionary/fuck",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "http",
+              "path": [
+                "define",
+                "{{meaning}}"
+              ],
+              "host": [
+                "urbanscraper",
+                "herokuapp",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "9fbc975c-5db1-4e3c-bf45-e45798e25387",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response time is less than 1 sec\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                  "});",
+                  "",
+                  "",
+                  "// Get the Response Body in the JSON",
+                  "",
+                  "var response = JSON.parse(responseBody);",
+                  "",
+                  "// Define Schema",
+                  "",
+                  "var dictionaryschema = ",
+                  " {",
+                  "  \"title\": \"DictionarySchema\",",
+                  "  \"type\": \"object\",",
+                  "  \"properties\": {",
+                  "    \"id\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"term\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"url\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"definition\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"example\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"author\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"author_url\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"posted\": {",
+                  "      \"type\": \"string\",",
+                  "    }",
+                  "  }",
+                  "};",
+                  "",
+                  "// Response Body - Schema Validation",
+                  "",
+                  "pm.test('Posts Schema is valid', function() { ",
+                  "    pm.expect(tv4.validate(response, dictionaryschema, false, true)).to.be.true;",
+                  "});",
+                  ""
+                ],
+                "_lastExecutionId": "74a85996-e1da-4d5c-a071-234d84ec10d5"
+              }
+            }
+          ]
+        },
+        "request": {
+          "description": {
+            "content": "http://localhost:8888/api/dictionary/fuck",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "http",
+            "path": [
+              "define",
+              "regression"
+            ],
+            "host": [
+              "urbanscraper",
+              "herokuapp",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.1.3"
+            },
+            {
+              "key": "Accept",
+              "value": "*/*"
+            },
+            {
+              "key": "Host",
+              "value": "urbanscraper.herokuapp.com"
+            },
+            {
+              "key": "accept-encoding",
+              "value": "gzip, deflate"
+            }
+          ],
+          "method": "GET",
+          "body": {}
+        },
+        "response": {
+          "id": "c8ebd823-8970-40be-b0d6-22e426071b67",
+          "status": "OK ",
+          "code": 200,
+          "header": [
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "max-age=86399"
+            },
+            {
+              "key": "Expires",
+              "value": "Sat, 26 May 2018 15:19:28 GMT"
+            },
+            {
+              "key": "Content-Length",
+              "value": "559"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Server",
+              "value": "WEBrick/1.3.1 (Ruby/2.4.3/2017-12-14)"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 25 May 2018 15:19:28 GMT"
+            },
+            {
+              "key": "Via",
+              "value": "1.1 vegur"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              34,
+              49,
+              48,
+              49,
+              50,
+              50,
+              56,
+              56,
+              34,
+              44,
+              34,
+              116,
+              101,
+              114,
+              109,
+              34,
+              58,
+              34,
+              114,
+              101,
+              103,
+              114,
+              101,
+              115,
+              115,
+              105,
+              111,
+              110,
+              34,
+              44,
+              34,
+              117,
+              114,
+              108,
+              34,
+              58,
+              34,
+              104,
+              116,
+              116,
+              112,
+              58,
+              47,
+              47,
+              119,
+              119,
+              119,
+              46,
+              117,
+              114,
+              98,
+              97,
+              110,
+              100,
+              105,
+              99,
+              116,
+              105,
+              111,
+              110,
+              97,
+              114,
+              121,
+              46,
+              99,
+              111,
+              109,
+              47,
+              100,
+              101,
+              102,
+              105,
+              110,
+              101,
+              46,
+              112,
+              104,
+              112,
+              63,
+              116,
+              101,
+              114,
+              109,
+              61,
+              114,
+              101,
+              103,
+              114,
+              101,
+              115,
+              115,
+              105,
+              111,
+              110,
+              38,
+              100,
+              101,
+              102,
+              105,
+              100,
+              61,
+              49,
+              48,
+              49,
+              50,
+              50,
+              56,
+              56,
+              34,
+              44,
+              34,
+              100,
+              101,
+              102,
+              105,
+              110,
+              105,
+              116,
+              105,
+              111,
+              110,
+              34,
+              58,
+              34,
+              65,
+              32,
+              115,
+              116,
+              114,
+              101,
+              115,
+              115,
+              45,
+              114,
+              101,
+              108,
+              97,
+              116,
+              101,
+              100,
+              32,
+              100,
+              101,
+              102,
+              101,
+              110,
+              115,
+              101,
+              32,
+              109,
+              101,
+              99,
+              104,
+              97,
+              110,
+              105,
+              115,
+              109,
+              46,
+              32,
+              73,
+              110,
+              118,
+              111,
+              108,
+              118,
+              101,
+              115,
+              32,
+              114,
+              101,
+              118,
+              101,
+              114,
+              116,
+              105,
+              110,
+              103,
+              32,
+              116,
+              111,
+              32,
+              105,
+              109,
+              109,
+              97,
+              116,
+              117,
+              114,
+              101,
+              32,
+              98,
+              101,
+              104,
+              97,
+              118,
+              105,
+              111,
+              114,
+              32,
+              119,
+              104,
+              101,
+              110,
+              32,
+              112,
+              114,
+              101,
+              115,
+              101,
+              110,
+              116,
+              101,
+              100,
+              32,
+              119,
+              105,
+              116,
+              104,
+              32,
+              97,
+              32,
+              115,
+              116,
+              114,
+              101,
+              115,
+              115,
+              102,
+              117,
+              108,
+              32,
+              115,
+              105,
+              116,
+              117,
+              97,
+              116,
+              105,
+              111,
+              110,
+              32,
+              111,
+              114,
+              32,
+              104,
+              117,
+              114,
+              116,
+              102,
+              117,
+              108,
+              32,
+              105,
+              110,
+              102,
+              111,
+              114,
+              109,
+              97,
+              116,
+              105,
+              111,
+              110,
+              46,
+              34,
+              44,
+              34,
+              101,
+              120,
+              97,
+              109,
+              112,
+              108,
+              101,
+              34,
+              58,
+              34,
+              84,
+              104,
+              101,
+              32,
+              69,
+              117,
+              114,
+              111,
+              112,
+              101,
+              97,
+              110,
+              115,
+              32,
+              119,
+              101,
+              114,
+              101,
+              32,
+              118,
+              101,
+              114,
+              121,
+              32,
+              114,
+              101,
+              103,
+              114,
+              101,
+              115,
+              115,
+              105,
+              118,
+              101,
+              32,
+              119,
+              104,
+              101,
+              110,
+              32,
+              116,
+              104,
+              101,
+              121,
+              32,
+              114,
+              101,
+              97,
+              108,
+              105,
+              115,
+              101,
+              100,
+              32,
+              116,
+              104,
+              97,
+              116,
+              32,
+              80,
+              97,
+              114,
+              105,
+              115,
+              32,
+              97,
+              110,
+              100,
+              32,
+              76,
+              111,
+              110,
+              100,
+              111,
+              110,
+              32,
+              104,
+              97,
+              100,
+              32,
+              98,
+              101,
+              101,
+              110,
+              32,
+              114,
+              101,
+              112,
+              108,
+              97,
+              99,
+              101,
+              100,
+              32,
+              98,
+              121,
+              32,
+              78,
+              101,
+              119,
+              32,
+              89,
+              111,
+              114,
+              107,
+              32,
+              97,
+              110,
+              100,
+              32,
+              82,
+              105,
+              111,
+              32,
+              100,
+              101,
+              32,
+              74,
+              97,
+              110,
+              105,
+              101,
+              114,
+              111,
+              46,
+              34,
+              44,
+              34,
+              97,
+              117,
+              116,
+              104,
+              111,
+              114,
+              34,
+              58,
+              34,
+              74,
+              111,
+              104,
+              110,
+              110,
+              121,
+              32,
+              80,
+              115,
+              101,
+              117,
+              100,
+              111,
+              110,
+              121,
+              109,
+              34,
+              44,
+              34,
+              97,
+              117,
+              116,
+              104,
+              111,
+              114,
+              95,
+              117,
+              114,
+              108,
+              34,
+              58,
+              34,
+              104,
+              116,
+              116,
+              112,
+              58,
+              47,
+              47,
+              119,
+              119,
+              119,
+              46,
+              117,
+              114,
+              98,
+              97,
+              110,
+              100,
+              105,
+              99,
+              116,
+              105,
+              111,
+              110,
+              97,
+              114,
+              121,
+              46,
+              99,
+              111,
+              109,
+              47,
+              97,
+              117,
+              116,
+              104,
+              111,
+              114,
+              46,
+              112,
+              104,
+              112,
+              63,
+              97,
+              117,
+              116,
+              104,
+              111,
+              114,
+              61,
+              74,
+              111,
+              104,
+              110,
+              110,
+              121,
+              37,
+              50,
+              48,
+              80,
+              115,
+              101,
+              117,
+              100,
+              111,
+              110,
+              121,
+              109,
+              34,
+              44,
+              34,
+              112,
+              111,
+              115,
+              116,
+              101,
+              100,
+              34,
+              58,
+              34,
+              50,
+              48,
+              48,
+              53,
+              45,
+              48,
+              49,
+              45,
+              50,
+              49,
+              84,
+              48,
+              48,
+              58,
+              48,
+              48,
+              58,
+              48,
+              48,
+              43,
+              48,
+              48,
+              58,
+              48,
+              48,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 199,
+          "responseSize": 559
+        },
+        "id": "87c1f696-0a48-4b8d-8aa2-56ed8ae5a177",
+        "assertions": [
+          {
+            "assertion": "Status code is 200"
+          },
+          {
+            "assertion": "Response time is less than 1 sec"
+          },
+          {
+            "assertion": "Posts Schema is valid"
+          }
+        ]
+      }
+    ],
+    "transfers": {
+      "responseTotal": 639
+    },
+    "failures": [
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 0,
+          "message": "expected response to have status code 200 but got 500",
+          "stack": "AssertionError: expected response to have status code 200 but got 500\n   at Object.eval sandbox-script.js:1:1)",
+          "checksum": "ef57fc031b6451c69c2500175f475feb",
+          "id": "1d5325ab-5ee3-49e4-b48b-1523a0f043ce",
+          "timestamp": 1527261565162,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 1,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 1,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:0 in test-script",
+        "source": {
+          "id": "88f02a99-f559-4137-b52e-5101e363c1c1",
+          "name": "Abbrevations",
+          "request": {
+            "description": {
+              "content": "http://localhost:8888/api/abbrevations/CS",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "http",
+              "path": [
+                "define",
+                "{{abbrevation}}"
+              ],
+              "host": [
+                "urbanscraper",
+                "herokuapp",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "102d058e-3aac-46f7-af94-0838d2518f56",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response time is less than 1 sec\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                  "});",
+                  "",
+                  "",
+                  "// Get the Response Body in the JSON",
+                  "",
+                  "var response = JSON.parse(responseBody);",
+                  "",
+                  "// Define Schema",
+                  "",
+                  "var dictionaryschema = ",
+                  " {",
+                  "  \"title\": \"DictionarySchema\",",
+                  "  \"type\": \"object\",",
+                  "  \"properties\": {",
+                  "    \"id\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"term\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"url\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"definition\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"example\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"author\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"author_url\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"posted\": {",
+                  "      \"type\": \"string\",",
+                  "    }",
+                  "  }",
+                  "};",
+                  "",
+                  "// Response Body - Schema Validation",
+                  "",
+                  "pm.test('Posts Schema is valid', function() { ",
+                  "    pm.expect(tv4.validate(response, dictionaryschema, false, true)).to.be.true;",
+                  "});",
+                  ""
+                ],
+                "_lastExecutionId": "addd7a31-1011-489d-b0e5-9c4c840cadf7"
+              }
+            }
+          ]
+        },
+        "parent": {
+          "_": {
+            "postman_id": "a1346b99-6b20-40f4-bd31-63d9288996be"
+          },
+          "item": [
+            {
+              "id": "88f02a99-f559-4137-b52e-5101e363c1c1",
+              "name": "Abbrevations",
+              "request": {
+                "description": {
+                  "content": "http://localhost:8888/api/abbrevations/CS",
+                  "type": "text/plain"
+                },
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "define",
+                    "{{abbrevation}}"
+                  ],
+                  "host": [
+                    "urbanscraper",
+                    "herokuapp",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "102d058e-3aac-46f7-af94-0838d2518f56",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 200\", function () {",
+                      "    pm.response.to.have.status(200);",
+                      "});",
+                      "",
+                      "pm.test(\"Response time is less than 1 sec\", function () {",
+                      "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                      "});",
+                      "",
+                      "",
+                      "// Get the Response Body in the JSON",
+                      "",
+                      "var response = JSON.parse(responseBody);",
+                      "",
+                      "// Define Schema",
+                      "",
+                      "var dictionaryschema = ",
+                      " {",
+                      "  \"title\": \"DictionarySchema\",",
+                      "  \"type\": \"object\",",
+                      "  \"properties\": {",
+                      "    \"id\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"term\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"url\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"definition\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"example\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"author\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"author_url\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"posted\": {",
+                      "      \"type\": \"string\",",
+                      "    }",
+                      "  }",
+                      "};",
+                      "",
+                      "// Response Body - Schema Validation",
+                      "",
+                      "pm.test('Posts Schema is valid', function() { ",
+                      "    pm.expect(tv4.validate(response, dictionaryschema, false, true)).to.be.true;",
+                      "});",
+                      ""
+                    ],
+                    "_lastExecutionId": "addd7a31-1011-489d-b0e5-9c4c840cadf7"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "87c1f696-0a48-4b8d-8aa2-56ed8ae5a177",
+              "name": "Dictionary",
+              "request": {
+                "description": {
+                  "content": "http://localhost:8888/api/dictionary/fuck",
+                  "type": "text/plain"
+                },
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "define",
+                    "{{meaning}}"
+                  ],
+                  "host": [
+                    "urbanscraper",
+                    "herokuapp",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "9fbc975c-5db1-4e3c-bf45-e45798e25387",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 200\", function () {",
+                      "    pm.response.to.have.status(200);",
+                      "});",
+                      "",
+                      "pm.test(\"Response time is less than 1 sec\", function () {",
+                      "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                      "});",
+                      "",
+                      "",
+                      "// Get the Response Body in the JSON",
+                      "",
+                      "var response = JSON.parse(responseBody);",
+                      "",
+                      "// Define Schema",
+                      "",
+                      "var dictionaryschema = ",
+                      " {",
+                      "  \"title\": \"DictionarySchema\",",
+                      "  \"type\": \"object\",",
+                      "  \"properties\": {",
+                      "    \"id\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"term\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"url\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"definition\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"example\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"author\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"author_url\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"posted\": {",
+                      "      \"type\": \"string\",",
+                      "    }",
+                      "  }",
+                      "};",
+                      "",
+                      "// Response Body - Schema Validation",
+                      "",
+                      "pm.test('Posts Schema is valid', function() { ",
+                      "    pm.expect(tv4.validate(response, dictionaryschema, false, true)).to.be.true;",
+                      "});",
+                      ""
+                    ],
+                    "_lastExecutionId": "74a85996-e1da-4d5c-a071-234d84ec10d5"
+                  }
+                }
+              ]
+            }
+          ],
+          "event": [],
+          "variable": [],
+          "info": {
+            "id": "a1346b99-6b20-40f4-bd31-63d9288996be",
+            "name": "DictionaryMeanings",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+          }
+        },
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 2,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "f19049e8-5a98-45ce-95cd-5197a2bde5d7",
+          "httpRequestId": "cd998e5a-584b-449f-a7e1-948755930bf5",
+          "scriptId": "102d058e-3aac-46f7-af94-0838d2518f56",
+          "execution": "addd7a31-1011-489d-b0e5-9c4c840cadf7"
+        }
+      },
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 1,
+          "message": "expected 8850 to be below 1000",
+          "stack": "AssertionError: expected 8850 to be below 1000\n   at Object.eval sandbox-script.js:2:1)",
+          "checksum": "1b68e8f2e8fed91748b7074554aec4c8",
+          "id": "ebd87e3e-3f05-4d81-9f8f-286369010b3f",
+          "timestamp": 1527261565165,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 2,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 1,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:1 in test-script",
+        "source": {
+          "id": "88f02a99-f559-4137-b52e-5101e363c1c1",
+          "name": "Abbrevations",
+          "request": {
+            "description": {
+              "content": "http://localhost:8888/api/abbrevations/CS",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "http",
+              "path": [
+                "define",
+                "{{abbrevation}}"
+              ],
+              "host": [
+                "urbanscraper",
+                "herokuapp",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "102d058e-3aac-46f7-af94-0838d2518f56",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response time is less than 1 sec\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                  "});",
+                  "",
+                  "",
+                  "// Get the Response Body in the JSON",
+                  "",
+                  "var response = JSON.parse(responseBody);",
+                  "",
+                  "// Define Schema",
+                  "",
+                  "var dictionaryschema = ",
+                  " {",
+                  "  \"title\": \"DictionarySchema\",",
+                  "  \"type\": \"object\",",
+                  "  \"properties\": {",
+                  "    \"id\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"term\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"url\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"definition\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"example\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"author\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"author_url\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"posted\": {",
+                  "      \"type\": \"string\",",
+                  "    }",
+                  "  }",
+                  "};",
+                  "",
+                  "// Response Body - Schema Validation",
+                  "",
+                  "pm.test('Posts Schema is valid', function() { ",
+                  "    pm.expect(tv4.validate(response, dictionaryschema, false, true)).to.be.true;",
+                  "});",
+                  ""
+                ],
+                "_lastExecutionId": "addd7a31-1011-489d-b0e5-9c4c840cadf7"
+              }
+            }
+          ]
+        },
+        "parent": {
+          "_": {
+            "postman_id": "a1346b99-6b20-40f4-bd31-63d9288996be"
+          },
+          "item": [
+            {
+              "id": "88f02a99-f559-4137-b52e-5101e363c1c1",
+              "name": "Abbrevations",
+              "request": {
+                "description": {
+                  "content": "http://localhost:8888/api/abbrevations/CS",
+                  "type": "text/plain"
+                },
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "define",
+                    "{{abbrevation}}"
+                  ],
+                  "host": [
+                    "urbanscraper",
+                    "herokuapp",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "102d058e-3aac-46f7-af94-0838d2518f56",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 200\", function () {",
+                      "    pm.response.to.have.status(200);",
+                      "});",
+                      "",
+                      "pm.test(\"Response time is less than 1 sec\", function () {",
+                      "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                      "});",
+                      "",
+                      "",
+                      "// Get the Response Body in the JSON",
+                      "",
+                      "var response = JSON.parse(responseBody);",
+                      "",
+                      "// Define Schema",
+                      "",
+                      "var dictionaryschema = ",
+                      " {",
+                      "  \"title\": \"DictionarySchema\",",
+                      "  \"type\": \"object\",",
+                      "  \"properties\": {",
+                      "    \"id\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"term\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"url\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"definition\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"example\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"author\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"author_url\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"posted\": {",
+                      "      \"type\": \"string\",",
+                      "    }",
+                      "  }",
+                      "};",
+                      "",
+                      "// Response Body - Schema Validation",
+                      "",
+                      "pm.test('Posts Schema is valid', function() { ",
+                      "    pm.expect(tv4.validate(response, dictionaryschema, false, true)).to.be.true;",
+                      "});",
+                      ""
+                    ],
+                    "_lastExecutionId": "addd7a31-1011-489d-b0e5-9c4c840cadf7"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "87c1f696-0a48-4b8d-8aa2-56ed8ae5a177",
+              "name": "Dictionary",
+              "request": {
+                "description": {
+                  "content": "http://localhost:8888/api/dictionary/fuck",
+                  "type": "text/plain"
+                },
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "define",
+                    "{{meaning}}"
+                  ],
+                  "host": [
+                    "urbanscraper",
+                    "herokuapp",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "9fbc975c-5db1-4e3c-bf45-e45798e25387",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 200\", function () {",
+                      "    pm.response.to.have.status(200);",
+                      "});",
+                      "",
+                      "pm.test(\"Response time is less than 1 sec\", function () {",
+                      "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                      "});",
+                      "",
+                      "",
+                      "// Get the Response Body in the JSON",
+                      "",
+                      "var response = JSON.parse(responseBody);",
+                      "",
+                      "// Define Schema",
+                      "",
+                      "var dictionaryschema = ",
+                      " {",
+                      "  \"title\": \"DictionarySchema\",",
+                      "  \"type\": \"object\",",
+                      "  \"properties\": {",
+                      "    \"id\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"term\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"url\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"definition\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"example\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"author\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"author_url\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"posted\": {",
+                      "      \"type\": \"string\",",
+                      "    }",
+                      "  }",
+                      "};",
+                      "",
+                      "// Response Body - Schema Validation",
+                      "",
+                      "pm.test('Posts Schema is valid', function() { ",
+                      "    pm.expect(tv4.validate(response, dictionaryschema, false, true)).to.be.true;",
+                      "});",
+                      ""
+                    ],
+                    "_lastExecutionId": "74a85996-e1da-4d5c-a071-234d84ec10d5"
+                  }
+                }
+              ]
+            }
+          ],
+          "event": [],
+          "variable": [],
+          "info": {
+            "id": "a1346b99-6b20-40f4-bd31-63d9288996be",
+            "name": "DictionaryMeanings",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+          }
+        },
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 2,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "f19049e8-5a98-45ce-95cd-5197a2bde5d7",
+          "httpRequestId": "cd998e5a-584b-449f-a7e1-948755930bf5",
+          "scriptId": "102d058e-3aac-46f7-af94-0838d2518f56",
+          "execution": "addd7a31-1011-489d-b0e5-9c4c840cadf7"
+        }
+      },
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 2,
+          "message": "expected false to be true",
+          "stack": "AssertionError: expected false to be true\n   at Object.eval sandbox-script.js:3:1)",
+          "checksum": "fec224bee66a332cc609014c655b80b4",
+          "id": "bb56c8b2-c581-4350-8ddf-60035ea3dfb1",
+          "timestamp": 1527261565166,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 3,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 1,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:2 in test-script",
+        "source": {
+          "id": "88f02a99-f559-4137-b52e-5101e363c1c1",
+          "name": "Abbrevations",
+          "request": {
+            "description": {
+              "content": "http://localhost:8888/api/abbrevations/CS",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "http",
+              "path": [
+                "define",
+                "{{abbrevation}}"
+              ],
+              "host": [
+                "urbanscraper",
+                "herokuapp",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "102d058e-3aac-46f7-af94-0838d2518f56",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response time is less than 1 sec\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                  "});",
+                  "",
+                  "",
+                  "// Get the Response Body in the JSON",
+                  "",
+                  "var response = JSON.parse(responseBody);",
+                  "",
+                  "// Define Schema",
+                  "",
+                  "var dictionaryschema = ",
+                  " {",
+                  "  \"title\": \"DictionarySchema\",",
+                  "  \"type\": \"object\",",
+                  "  \"properties\": {",
+                  "    \"id\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"term\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"url\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"definition\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"example\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"author\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"author_url\": {",
+                  "      \"type\": \"string\",",
+                  "    },",
+                  "    \"posted\": {",
+                  "      \"type\": \"string\",",
+                  "    }",
+                  "  }",
+                  "};",
+                  "",
+                  "// Response Body - Schema Validation",
+                  "",
+                  "pm.test('Posts Schema is valid', function() { ",
+                  "    pm.expect(tv4.validate(response, dictionaryschema, false, true)).to.be.true;",
+                  "});",
+                  ""
+                ],
+                "_lastExecutionId": "addd7a31-1011-489d-b0e5-9c4c840cadf7"
+              }
+            }
+          ]
+        },
+        "parent": {
+          "_": {
+            "postman_id": "a1346b99-6b20-40f4-bd31-63d9288996be"
+          },
+          "item": [
+            {
+              "id": "88f02a99-f559-4137-b52e-5101e363c1c1",
+              "name": "Abbrevations",
+              "request": {
+                "description": {
+                  "content": "http://localhost:8888/api/abbrevations/CS",
+                  "type": "text/plain"
+                },
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "define",
+                    "{{abbrevation}}"
+                  ],
+                  "host": [
+                    "urbanscraper",
+                    "herokuapp",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "102d058e-3aac-46f7-af94-0838d2518f56",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 200\", function () {",
+                      "    pm.response.to.have.status(200);",
+                      "});",
+                      "",
+                      "pm.test(\"Response time is less than 1 sec\", function () {",
+                      "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                      "});",
+                      "",
+                      "",
+                      "// Get the Response Body in the JSON",
+                      "",
+                      "var response = JSON.parse(responseBody);",
+                      "",
+                      "// Define Schema",
+                      "",
+                      "var dictionaryschema = ",
+                      " {",
+                      "  \"title\": \"DictionarySchema\",",
+                      "  \"type\": \"object\",",
+                      "  \"properties\": {",
+                      "    \"id\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"term\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"url\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"definition\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"example\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"author\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"author_url\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"posted\": {",
+                      "      \"type\": \"string\",",
+                      "    }",
+                      "  }",
+                      "};",
+                      "",
+                      "// Response Body - Schema Validation",
+                      "",
+                      "pm.test('Posts Schema is valid', function() { ",
+                      "    pm.expect(tv4.validate(response, dictionaryschema, false, true)).to.be.true;",
+                      "});",
+                      ""
+                    ],
+                    "_lastExecutionId": "addd7a31-1011-489d-b0e5-9c4c840cadf7"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "87c1f696-0a48-4b8d-8aa2-56ed8ae5a177",
+              "name": "Dictionary",
+              "request": {
+                "description": {
+                  "content": "http://localhost:8888/api/dictionary/fuck",
+                  "type": "text/plain"
+                },
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "define",
+                    "{{meaning}}"
+                  ],
+                  "host": [
+                    "urbanscraper",
+                    "herokuapp",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "9fbc975c-5db1-4e3c-bf45-e45798e25387",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 200\", function () {",
+                      "    pm.response.to.have.status(200);",
+                      "});",
+                      "",
+                      "pm.test(\"Response time is less than 1 sec\", function () {",
+                      "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                      "});",
+                      "",
+                      "",
+                      "// Get the Response Body in the JSON",
+                      "",
+                      "var response = JSON.parse(responseBody);",
+                      "",
+                      "// Define Schema",
+                      "",
+                      "var dictionaryschema = ",
+                      " {",
+                      "  \"title\": \"DictionarySchema\",",
+                      "  \"type\": \"object\",",
+                      "  \"properties\": {",
+                      "    \"id\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"term\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"url\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"definition\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"example\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"author\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"author_url\": {",
+                      "      \"type\": \"string\",",
+                      "    },",
+                      "    \"posted\": {",
+                      "      \"type\": \"string\",",
+                      "    }",
+                      "  }",
+                      "};",
+                      "",
+                      "// Response Body - Schema Validation",
+                      "",
+                      "pm.test('Posts Schema is valid', function() { ",
+                      "    pm.expect(tv4.validate(response, dictionaryschema, false, true)).to.be.true;",
+                      "});",
+                      ""
+                    ],
+                    "_lastExecutionId": "74a85996-e1da-4d5c-a071-234d84ec10d5"
+                  }
+                }
+              ]
+            }
+          ],
+          "event": [],
+          "variable": [],
+          "info": {
+            "id": "a1346b99-6b20-40f4-bd31-63d9288996be",
+            "name": "DictionaryMeanings",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+          }
+        },
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 2,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "f19049e8-5a98-45ce-95cd-5197a2bde5d7",
+          "httpRequestId": "cd998e5a-584b-449f-a7e1-948755930bf5",
+          "scriptId": "102d058e-3aac-46f7-af94-0838d2518f56",
+          "execution": "addd7a31-1011-489d-b0e5-9c4c840cadf7"
+        }
+      }
+    ],
+    "error": null
+  }
+}
