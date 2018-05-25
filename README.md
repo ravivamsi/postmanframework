@@ -83,7 +83,7 @@ $ newman run <collection-file-source> -e <environment-file-source> -r report.htm
 ### Run the Postman Collection with Environment and Generate Custom Report
 ```terminal
 $ newman run <collection-file-source> -e <environment-file-source> --reporters cli,html --reporter-html-template <path to the template> --reporter-html-exporter <path to export>
-
+```
 ### Report Configuration
 
 Reporters provide information about the current collection run in a format that is easy to both: disseminate and assimilate.
