@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "4da544ad-8c39-4e06-a2d2-0d232d133a0b",
+		"name": "ZipCodes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET ZipCode Details US",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b7955bbe-484d-487b-a952-741cad861b18",
+						"type": "text/javascript",
+						"exec": [
+							"var zipcodeschema = {",
+							"  \"title\": \"ZipCode Schema\",",
+							"  \"type\": \"object\",",
+							"  \"properties\": {",
+							"    \"post code\": {",
+							"      \"type\": \"string\",",
+							"    },",
+							"    \"country\": {",
+							"      \"type\": \"string\",",
+							"    },",
+							"    \"country abbreviation\": {",
+							"      \"type\": \"string\",",
+							"    },",
+							"    \"places\": {",
+							"      \"type\": \"array\",",
+							"      \"items\": {",
+							"        \"type\": \"object\",",
+							"        \"properties\": {",
+							"          \"place name\": {",
+							"            \"type\": \"string\",",
+							"          },",
+							"          \"longitude\": {",
+							"            \"type\": \"string\",",
+							"          },",
+							"          \"state\": {",
+							"            \"type\": \"string\",",
+							"          },",
+							"          \"state abbreviation\": {",
+							"            \"type\": \"string\",",
+							"          },",
+							"          \"latitude\": {",
+							"            \"type\": \"string\",",
+							"          }",
+							"        }",
+							"      }",
+							"    }",
+							"  }",
+							"};",
+							"",
+							"",
+							"",
+							"// Get the Response Body in the JSON",
+							"",
+							"var response = JSON.parse(responseBody);",
+							"",
+							"",
+							"// Response Body - Schema Validation",
+							"",
+							"pm.test('Posts Schema is valid', function() { ",
+							"    pm.expect(tv4.validate(response, zipcodeschema, false, true)).to.be.true;",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"pm.test(\"Response time is less than 1 sec\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://api.zippopotam.us/{{country}}/{{zipCode}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"zippopotam",
+						"us"
+					],
+					"path": [
+						"{{country}}",
+						"{{zipCode}}"
+					]
+				},
+				"description": "https://api.zippopotam.us"
+			},
+			"response": []
+		},
+		{
+			"name": "GET ZipCode Details IND",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ba89a3fb-2dee-4dcd-ab88-8ade8575e823",
+						"type": "text/javascript",
+						"exec": [
+							"var zipcodeschema = {",
+							"  \"title\": \"ZipCode Schema\",",
+							"  \"type\": \"object\",",
+							"  \"properties\": {",
+							"    \"post code\": {",
+							"      \"type\": \"string\",",
+							"    },",
+							"    \"country\": {",
+							"      \"type\": \"string\",",
+							"    },",
+							"    \"country abbreviation\": {",
+							"      \"type\": \"string\",",
+							"    },",
+							"    \"places\": {",
+							"      \"type\": \"array\",",
+							"      \"items\": {",
+							"        \"type\": \"object\",",
+							"        \"properties\": {",
+							"          \"place name\": {",
+							"            \"type\": \"string\",",
+							"          },",
+							"          \"longitude\": {",
+							"            \"type\": \"string\",",
+							"          },",
+							"          \"state\": {",
+							"            \"type\": \"string\",",
+							"          },",
+							"          \"state abbreviation\": {",
+							"            \"type\": \"string\",",
+							"          },",
+							"          \"latitude\": {",
+							"            \"type\": \"string\",",
+							"          }",
+							"        }",
+							"      }",
+							"    }",
+							"  }",
+							"};",
+							"",
+							"",
+							"",
+							"// Get the Response Body in the JSON",
+							"",
+							"var response = JSON.parse(responseBody);",
+							"",
+							"",
+							"// Response Body - Schema Validation",
+							"",
+							"pm.test('Posts Schema is valid', function() { ",
+							"    pm.expect(tv4.validate(response, zipcodeschema, false, true)).to.be.true;",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"pm.test(\"Response time is less than 1 sec\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://api.zippopotam.us/{{mycountry}}/{{myzip}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"zippopotam",
+						"us"
+					],
+					"path": [
+						"{{mycountry}}",
+						"{{myzip}}"
+					]
+				},
+				"description": "https://api.zippopotam.us"
+			},
+			"response": []
+		}
+	]
+}
