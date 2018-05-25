@@ -13,7 +13,7 @@ async.parallel([
     collection: require('./PostmanCollection/Sample.postman_collection.json'),
     environment: require('./PostmanEnvironment/Test.postman_environment.json'),
     reporters: ['html','cli'],
-    reporter : { html : { export : './report/htmlReport.html'}},
+    reporter : { html : { export : './report/ParallelExecutionSampleReport.html'}},
     insecure: true, // allow self-signed certs, required in postman too
     timeout: 180000  // set time out
 }).on('start', function (err, args) { // on start of run, log to console
@@ -29,10 +29,10 @@ async.parallel([
     },
     function (cb) {
         newman.run({
-    collection: require('./PostmanCollection/Sample.postman_collection.json'),
-    environment: require('./PostmanEnvironment/Test.postman_environment.json'),
+    collection: require('./PostmanCollection/ZipCodes.postman_collection.json'),
+    environment: require('./PostmanEnvironment/UAT.postman_environment.json'),
     reporters: ['html','cli'],
-    reporter : { html : { export : './report/TestReport.html'}},
+    reporter : { html : { export : './report/ParallelExecutionZipCodesReport.html'}},
     insecure: true, // allow self-signed certs, required in postman too
     timeout: 180000  // set time out
 }).on('start', function (err, args) { // on start of run, log to console
@@ -48,10 +48,10 @@ async.parallel([
     },
     function (cb) {
         newman.run({
-    collection: require('./PostmanCollection/Sample.postman_collection.json'),
-    environment: require('./PostmanEnvironment/Test.postman_environment.json'),
+    collection: require('./PostmanCollection/DictionaryMeanings.postman_collection.json'),
+    environment: require('./PostmanEnvironment/Dev.postman_environment.json'),
     reporters: ['html','cli'],
-    reporter : { html : { export : './report/TestReport.html'}},
+    reporter : { html : { export : './report/ParallelExecutionDictionaryReport.html'}},
     insecure: true, // allow self-signed certs, required in postman too
     timeout: 180000  // set time out
 }).on('start', function (err, args) { // on start of run, log to console

@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "a1346b99-6b20-40f4-bd31-63d9288996be",
+		"name": "DictionaryMeanings",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Abbrevations",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "102d058e-3aac-46f7-af94-0838d2518f56",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 1 sec\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});",
+							"",
+							"",
+							"// Get the Response Body in the JSON",
+							"",
+							"var response = JSON.parse(responseBody);",
+							"",
+							"// Define Schema",
+							"",
+							"var dictionaryschema = ",
+							" {",
+							"  \"title\": \"DictionarySchema\",",
+							"  \"type\": \"object\",",
+							"  \"properties\": {",
+							"    \"id\": {",
+							"      \"type\": \"string\",",
+							"    },",
+							"    \"term\": {",
+							"      \"type\": \"string\",",
+							"    },",
+							"    \"url\": {",
+							"      \"type\": \"string\",",
+							"    },",
+							"    \"definition\": {",
+							"      \"type\": \"string\",",
+							"    },",
+							"    \"example\": {",
+							"      \"type\": \"string\",",
+							"    },",
+							"    \"author\": {",
+							"      \"type\": \"string\",",
+							"    },",
+							"    \"author_url\": {",
+							"      \"type\": \"string\",",
+							"    },",
+							"    \"posted\": {",
+							"      \"type\": \"string\",",
+							"    }",
+							"  }",
+							"};",
+							"",
+							"// Response Body - Schema Validation",
+							"",
+							"pm.test('Posts Schema is valid', function() { ",
+							"    pm.expect(tv4.validate(response, dictionaryschema, false, true)).to.be.true;",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://urbanscraper.herokuapp.com/define/{{abbrevation}}",
+					"protocol": "http",
+					"host": [
+						"urbanscraper",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"define",
+						"{{abbrevation}}"
+					]
+				},
+				"description": "http://localhost:8888/api/abbrevations/CS"
+			},
+			"response": []
+		},
+		{
+			"name": "Dictionary",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9fbc975c-5db1-4e3c-bf45-e45798e25387",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 1 sec\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});",
+							"",
+							"",
+							"// Get the Response Body in the JSON",
+							"",
+							"var response = JSON.parse(responseBody);",
+							"",
+							"// Define Schema",
+							"",
+							"var dictionaryschema = ",
+							" {",
+							"  \"title\": \"DictionarySchema\",",
+							"  \"type\": \"object\",",
+							"  \"properties\": {",
+							"    \"id\": {",
+							"      \"type\": \"string\",",
+							"    },",
+							"    \"term\": {",
+							"      \"type\": \"string\",",
+							"    },",
+							"    \"url\": {",
+							"      \"type\": \"string\",",
+							"    },",
+							"    \"definition\": {",
+							"      \"type\": \"string\",",
+							"    },",
+							"    \"example\": {",
+							"      \"type\": \"string\",",
+							"    },",
+							"    \"author\": {",
+							"      \"type\": \"string\",",
+							"    },",
+							"    \"author_url\": {",
+							"      \"type\": \"string\",",
+							"    },",
+							"    \"posted\": {",
+							"      \"type\": \"string\",",
+							"    }",
+							"  }",
+							"};",
+							"",
+							"// Response Body - Schema Validation",
+							"",
+							"pm.test('Posts Schema is valid', function() { ",
+							"    pm.expect(tv4.validate(response, dictionaryschema, false, true)).to.be.true;",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://urbanscraper.herokuapp.com/define/{{meaning}}",
+					"protocol": "http",
+					"host": [
+						"urbanscraper",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"define",
+						"{{meaning}}"
+					]
+				},
+				"description": "http://localhost:8888/api/dictionary/fuck"
+			},
+			"response": []
+		}
+	]
+}
