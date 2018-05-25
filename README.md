@@ -1,6 +1,16 @@
 # Quick API Automation Framework using Postman and Newman
 Node Application to run the Postman Collection and respective Environments and generate Newman Reports
 
+
+## Configuration
+
+1. Postman - Version 6.1.2
+2. Collection - Version 2.1
+3. Newman - Version 3.1
+4. Node - Version 10.1.0
+5. NPM - Version 5.6.0
+7. Reports - Default Newman Report and Custom HBS Template
+
 ## Contents
 
 1. [Pre-Requisites](#pre-requisites)
