@@ -16,6 +16,7 @@ Node Application to run the Postman Collection and respective Environments and g
     2. [Run Multiple Postman Collections](#run-multiple-postman-collections)
     3. [Run the Postman Collection with Environment](#run-the-postman-collection-with-environment)
     4. [Run the Collection with Environment and Generate Newman Report](#run-the-collection-with-environment-and-generate-newman-report)
+    5. [Run the Collection with Environment and Generate Custom Report](#run-the-collection-with-environment-and-generate-custom-report)
 
 3. [Node Application Execution of Collections]
     1. [Run the Collection as Node app](#run-the-collection-as-node-app)
@@ -76,6 +77,10 @@ $ newman run <collection-file-source> -e <environment-file-source>
 ```terminal
 $ newman run <collection-file-source> -e <environment-file-source> -r report.html
 ```
+
+### Run the Postman Collection wuth Environment and Generate Custom Report
+```terminal
+$ newman run <collection-file-source> -e <environment-file-source> --reporters cli,html --reporter-html-template <path to the template> --reporter-html-exporter <path to export>
 
 ### CommandLine Options (Source: https://www.npmjs.com/package/newman)
 
