@@ -169,7 +169,9 @@ npm install -g newman-reporter-teamcity
 
 
 
-### Command Line Options (Source: https://www.npmjs.com/package/newman)
+### Command Line Options 
+
+(Source: https://www.npmjs.com/package/newman)
 
 `newman run <collection-file-source> [options]`
 
