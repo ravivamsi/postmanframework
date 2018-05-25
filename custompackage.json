@@ -1,0 +1,15 @@
+{
+  "name": "RunCollectionAndGenerateCustomHTMLReport",
+  "version": "1.0.0",
+  "description": "Services",
+  "main": "custom.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "newman": "^3.9.3"
+  }
+}
