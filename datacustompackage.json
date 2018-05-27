@@ -1,8 +1,8 @@
 {
-  "name": "SampleCollectionAssertionsAndNewmanReport",
+  "name": "RunCollectionAndGenerateCustomHTMLReport",
   "version": "1.0.0",
   "description": "Services",
-  "main": "app.js",
+  "main": "datacustom.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "newman": "^3.9.3",
-    "npm": "^6.1.0"
+    "newman": "^3.9.3"
   }
 }
