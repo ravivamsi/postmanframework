@@ -5,7 +5,7 @@
     },
     "item": [
       {
-        "id": "30371acc-7c3a-4dc2-8b74-b11767b62e88",
+        "id": "9036ffff-c86b-4b49-b499-1fe9929073f2",
         "name": "GET Posts",
         "request": {
           "description": {
@@ -98,13 +98,13 @@
                 "",
                 ""
               ],
-              "_lastExecutionId": "1237a22e-4441-4a9a-ad68-8357a21968ea"
+              "_lastExecutionId": "e070ab38-0896-48ec-b1e6-d54688db9f1c"
             }
           }
         ]
       },
       {
-        "id": "1ec7539f-de67-4722-9018-c31a2ef4ccf1",
+        "id": "b4ae941e-7682-4de9-a65b-c59adc98d769",
         "name": "GET Post By ID",
         "request": {
           "description": {
@@ -199,13 +199,13 @@
                 "",
                 ""
               ],
-              "_lastExecutionId": "1ba7818e-3498-4854-9cd7-cccea845fef2"
+              "_lastExecutionId": "c78cb5db-eb93-4d4b-b9df-ff9b53142d98"
             }
           }
         ]
       },
       {
-        "id": "688c0055-768b-4539-b6f9-ff6ac5e9c702",
+        "id": "1c49b5f3-85d1-4ccb-8274-f20784bd7a62",
         "name": "DELETE Post By ID",
         "request": {
           "description": {
@@ -259,13 +259,13 @@
                 "",
                 ""
               ],
-              "_lastExecutionId": "8f8b12a7-3831-4825-8976-d85be0520384"
+              "_lastExecutionId": "8815a359-aec3-4509-9861-472d50d72197"
             }
           }
         ]
       },
       {
-        "id": "dcb38dff-7cda-442a-b70f-9cca0a4b988f",
+        "id": "effaf849-cea9-4e4a-aff9-c53e88c7961c",
         "name": "GET Post By ID Comments",
         "request": {
           "description": {
@@ -366,13 +366,13 @@
                 "",
                 ""
               ],
-              "_lastExecutionId": "fef4e5c2-ae91-4d4c-8c5a-ba909c3dea79"
+              "_lastExecutionId": "86d920b0-e0d2-4171-93ab-c8e1e5723bc2"
             }
           }
         ]
       },
       {
-        "id": "3846f8d3-ecb5-4f58-9281-71df28c1f7f4",
+        "id": "0673ed16-f00f-4e0a-9a1b-2432d68cef8e",
         "name": "GET Comments For PostID",
         "request": {
           "description": {
@@ -477,13 +477,13 @@
                 "",
                 ""
               ],
-              "_lastExecutionId": "12b59ae2-9845-4ce8-9a7b-5f814e30e4e8"
+              "_lastExecutionId": "df745881-6024-418f-9160-ad0d57a2fdd2"
             }
           }
         ]
       },
       {
-        "id": "b81aa5e0-ffda-4bf3-bb54-89760164ebe3",
+        "id": "3a76731c-033e-4dba-bc36-466bf62cd097",
         "name": "GET Posts For UserID",
         "request": {
           "description": {
@@ -584,7 +584,7 @@
                 "",
                 ""
               ],
-              "_lastExecutionId": "67a65aff-fe65-4d68-91ce-69462fa6b50b"
+              "_lastExecutionId": "5a077616-049e-44ba-b36d-91413ca7dc09"
             }
           }
         ]
@@ -645,7 +645,7 @@
     ]
   },
   "globals": {
-    "id": "f42a6800-51d6-4203-aaba-d271fa1b8263",
+    "id": "fe2afd16-a910-4bf0-b77e-82bf826b778e",
     "values": []
   },
   "run": {
@@ -697,9 +697,9 @@
       }
     },
     "timings": {
-      "responseAverage": 221.66666666666666,
-      "started": 1527261541870,
-      "completed": 1527261543526
+      "responseAverage": 102.66666666666667,
+      "started": 1527361551272,
+      "completed": 1527361552223
     },
     "executions": [
       {
@@ -712,11 +712,11 @@
           "eof": false,
           "bof": true,
           "cr": false,
-          "ref": "5ec36411-b671-450f-8455-b3f514dae806",
-          "httpRequestId": "35ca5ae6-fbf3-4bac-bdf8-c875a7043901"
+          "ref": "ebd63dda-d646-4f3a-8825-384806d7642e",
+          "httpRequestId": "153381e1-2551-4bdd-98bf-e260a757ac49"
         },
         "item": {
-          "id": "30371acc-7c3a-4dc2-8b74-b11767b62e88",
+          "id": "9036ffff-c86b-4b49-b499-1fe9929073f2",
           "name": "GET Posts",
           "request": {
             "description": {
@@ -809,7 +809,7 @@
                   "",
                   ""
                 ],
-                "_lastExecutionId": "1237a22e-4441-4a9a-ad68-8357a21968ea"
+                "_lastExecutionId": "e070ab38-0896-48ec-b1e6-d54688db9f1c"
               }
             }
           ]
@@ -854,13 +854,13 @@
           "body": {}
         },
         "response": {
-          "id": "537335a6-4b8f-4fda-a2b7-42cda97b0866",
+          "id": "e08252c2-50cd-4baf-b2ba-9663da914c7e",
           "status": "OK",
           "code": 200,
           "header": [
             {
               "key": "Date",
-              "value": "Fri, 25 May 2018 15:19:05 GMT"
+              "value": "Sat, 26 May 2018 19:05:51 GMT"
             },
             {
               "key": "Content-Type",
@@ -876,7 +876,7 @@
             },
             {
               "key": "Set-Cookie",
-              "value": "__cfduid=d2b594ccddee625d6a3e5faf8d6aff4b51527261545; expires=Sat, 25-May-19 15:19:05 GMT; path=/; domain=.typicode.com; HttpOnly"
+              "value": "__cfduid=d82d34460ee55522cb8bf9554c31339b31527361551; expires=Sun, 26-May-19 19:05:51 GMT; path=/; domain=.typicode.com; HttpOnly"
             },
             {
               "key": "X-Powered-By",
@@ -900,7 +900,7 @@
             },
             {
               "key": "Expires",
-              "value": "Fri, 25 May 2018 19:19:05 GMT"
+              "value": "Sat, 26 May 2018 23:05:51 GMT"
             },
             {
               "key": "X-Content-Type-Options",
@@ -932,7 +932,7 @@
             },
             {
               "key": "CF-RAY",
-              "value": "4208fa7239657143-ORD"
+              "value": "421284003c09b5ae-MEM"
             }
           ],
           "stream": {
@@ -28461,10 +28461,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 493,
+          "responseTime": 147,
           "responseSize": 27520
         },
-        "id": "30371acc-7c3a-4dc2-8b74-b11767b62e88",
+        "id": "9036ffff-c86b-4b49-b499-1fe9929073f2",
         "assertions": [
           {
             "assertion": "Status code Assertion for 200"
@@ -28479,15 +28479,15 @@
       },
       {
         "cursor": {
-          "ref": "34f64e43-48b1-4042-ad9b-85c0395aa162",
+          "ref": "9962a416-bee4-42c6-ad73-60ad4b6cc6a2",
           "length": 6,
           "cycles": 1,
           "position": 1,
           "iteration": 0,
-          "httpRequestId": "2e8539e4-15d6-4a9d-9f93-1d895978bb38"
+          "httpRequestId": "c3aa7b65-3d40-41f5-b4f6-45023137e58b"
         },
         "item": {
-          "id": "1ec7539f-de67-4722-9018-c31a2ef4ccf1",
+          "id": "b4ae941e-7682-4de9-a65b-c59adc98d769",
           "name": "GET Post By ID",
           "request": {
             "description": {
@@ -28582,7 +28582,7 @@
                   "",
                   ""
                 ],
-                "_lastExecutionId": "1ba7818e-3498-4854-9cd7-cccea845fef2"
+                "_lastExecutionId": "c78cb5db-eb93-4d4b-b9df-ff9b53142d98"
               }
             }
           ]
@@ -28621,7 +28621,7 @@
             },
             {
               "key": "cookie",
-              "value": "__cfduid=d2b594ccddee625d6a3e5faf8d6aff4b51527261545"
+              "value": "__cfduid=d82d34460ee55522cb8bf9554c31339b31527361551"
             },
             {
               "key": "accept-encoding",
@@ -28632,13 +28632,13 @@
           "body": {}
         },
         "response": {
-          "id": "f2866dd6-1085-4124-b1cb-1e8e8addf8e3",
+          "id": "43a297b4-30dc-4eaa-a393-924b06d3ef80",
           "status": "OK",
           "code": 200,
           "header": [
             {
               "key": "Date",
-              "value": "Fri, 25 May 2018 15:19:05 GMT"
+              "value": "Sat, 26 May 2018 19:05:51 GMT"
             },
             {
               "key": "Content-Type",
@@ -28674,7 +28674,7 @@
             },
             {
               "key": "Expires",
-              "value": "Fri, 25 May 2018 19:19:05 GMT"
+              "value": "Sat, 26 May 2018 23:05:51 GMT"
             },
             {
               "key": "X-Content-Type-Options",
@@ -28702,7 +28702,7 @@
             },
             {
               "key": "CF-RAY",
-              "value": "4208fa744b337143-ORD"
+              "value": "42128401ac2cb5ae-MEM"
             },
             {
               "key": "Content-Encoding",
@@ -29007,10 +29007,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 76,
+          "responseTime": 25,
           "responseSize": 292
         },
-        "id": "1ec7539f-de67-4722-9018-c31a2ef4ccf1",
+        "id": "b4ae941e-7682-4de9-a65b-c59adc98d769",
         "assertions": [
           {
             "assertion": "Status code Assertion for 200"
@@ -29025,15 +29025,15 @@
       },
       {
         "cursor": {
-          "ref": "cbabb956-1f88-4c77-80f6-db6eabc5b0a2",
+          "ref": "2deb6c12-ce53-4b74-9108-4e3917df1b3b",
           "length": 6,
           "cycles": 1,
           "position": 2,
           "iteration": 0,
-          "httpRequestId": "34da3c96-82b9-4c77-9bcb-a3fd31727bc6"
+          "httpRequestId": "b0dc9c32-7f6e-4faf-8755-8458b528ee69"
         },
         "item": {
-          "id": "688c0055-768b-4539-b6f9-ff6ac5e9c702",
+          "id": "1c49b5f3-85d1-4ccb-8274-f20784bd7a62",
           "name": "DELETE Post By ID",
           "request": {
             "description": {
@@ -29087,7 +29087,7 @@
                   "",
                   ""
                 ],
-                "_lastExecutionId": "8f8b12a7-3831-4825-8976-d85be0520384"
+                "_lastExecutionId": "8815a359-aec3-4509-9861-472d50d72197"
               }
             }
           ]
@@ -29126,7 +29126,7 @@
             },
             {
               "key": "cookie",
-              "value": "__cfduid=d2b594ccddee625d6a3e5faf8d6aff4b51527261545"
+              "value": "__cfduid=d82d34460ee55522cb8bf9554c31339b31527361551"
             },
             {
               "key": "accept-encoding",
@@ -29141,13 +29141,13 @@
           "body": {}
         },
         "response": {
-          "id": "b9a1f132-7286-410c-9bd3-aedc0302b7d9",
+          "id": "7ae33388-ac74-49f4-8a2b-564e5577d70e",
           "status": "OK",
           "code": 200,
           "header": [
             {
               "key": "Date",
-              "value": "Fri, 25 May 2018 15:19:06 GMT"
+              "value": "Sat, 26 May 2018 19:05:52 GMT"
             },
             {
               "key": "Content-Type",
@@ -29207,7 +29207,7 @@
             },
             {
               "key": "CF-RAY",
-              "value": "4208fa74fb977143-ORD"
+              "value": "421284020c32b5ae-MEM"
             }
           ],
           "stream": {
@@ -29218,10 +29218,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 448,
+          "responseTime": 376,
           "responseSize": 2
         },
-        "id": "688c0055-768b-4539-b6f9-ff6ac5e9c702",
+        "id": "1c49b5f3-85d1-4ccb-8274-f20784bd7a62",
         "assertions": [
           {
             "assertion": "Status code Assertion for 200"
@@ -29233,15 +29233,15 @@
       },
       {
         "cursor": {
-          "ref": "7f2b604a-4692-42cc-9992-2aacab904f75",
+          "ref": "c291b5b9-02f1-4b06-b6f5-db5e199c1920",
           "length": 6,
           "cycles": 1,
           "position": 3,
           "iteration": 0,
-          "httpRequestId": "dc14cb1b-d749-4ca1-8941-682b92725aa2"
+          "httpRequestId": "807a13d6-ccfe-481e-8f3e-150cea3f3d8c"
         },
         "item": {
-          "id": "dcb38dff-7cda-442a-b70f-9cca0a4b988f",
+          "id": "effaf849-cea9-4e4a-aff9-c53e88c7961c",
           "name": "GET Post By ID Comments",
           "request": {
             "description": {
@@ -29342,7 +29342,7 @@
                   "",
                   ""
                 ],
-                "_lastExecutionId": "fef4e5c2-ae91-4d4c-8c5a-ba909c3dea79"
+                "_lastExecutionId": "86d920b0-e0d2-4171-93ab-c8e1e5723bc2"
               }
             }
           ]
@@ -29382,7 +29382,7 @@
             },
             {
               "key": "cookie",
-              "value": "__cfduid=d2b594ccddee625d6a3e5faf8d6aff4b51527261545"
+              "value": "__cfduid=d82d34460ee55522cb8bf9554c31339b31527361551"
             },
             {
               "key": "accept-encoding",
@@ -29393,13 +29393,13 @@
           "body": {}
         },
         "response": {
-          "id": "0bbc4c52-0475-4143-9c14-9eb5720e054d",
+          "id": "03460797-1ec3-434e-b5ba-04dca2dae41d",
           "status": "OK",
           "code": 200,
           "header": [
             {
               "key": "Date",
-              "value": "Fri, 25 May 2018 15:19:06 GMT"
+              "value": "Sat, 26 May 2018 19:05:52 GMT"
             },
             {
               "key": "Content-Type",
@@ -29435,7 +29435,7 @@
             },
             {
               "key": "Expires",
-              "value": "Fri, 25 May 2018 19:19:06 GMT"
+              "value": "Sat, 26 May 2018 23:05:52 GMT"
             },
             {
               "key": "X-Content-Type-Options",
@@ -29467,7 +29467,7 @@
             },
             {
               "key": "CF-RAY",
-              "value": "4208fa77edd17143-ORD"
+              "value": "421284048c8cb5ae-MEM"
             }
           ],
           "stream": {
@@ -30986,10 +30986,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 75,
+          "responseTime": 22,
           "responseSize": 1510
         },
-        "id": "dcb38dff-7cda-442a-b70f-9cca0a4b988f",
+        "id": "effaf849-cea9-4e4a-aff9-c53e88c7961c",
         "assertions": [
           {
             "assertion": "Status code Assertion for 200"
@@ -31004,15 +31004,15 @@
       },
       {
         "cursor": {
-          "ref": "469b0786-4c75-4ecb-ad5a-83f25aaf2370",
+          "ref": "dd3be755-6647-4696-9ff7-1060509bd641",
           "length": 6,
           "cycles": 1,
           "position": 4,
           "iteration": 0,
-          "httpRequestId": "7effaa9c-1efc-48f6-a323-d76a7d52abbe"
+          "httpRequestId": "4ed0273f-82da-4d5d-b133-f5f792ca1725"
         },
         "item": {
-          "id": "3846f8d3-ecb5-4f58-9281-71df28c1f7f4",
+          "id": "0673ed16-f00f-4e0a-9a1b-2432d68cef8e",
           "name": "GET Comments For PostID",
           "request": {
             "description": {
@@ -31117,7 +31117,7 @@
                   "",
                   ""
                 ],
-                "_lastExecutionId": "12b59ae2-9845-4ce8-9a7b-5f814e30e4e8"
+                "_lastExecutionId": "df745881-6024-418f-9160-ad0d57a2fdd2"
               }
             }
           ]
@@ -31160,7 +31160,7 @@
             },
             {
               "key": "cookie",
-              "value": "__cfduid=d2b594ccddee625d6a3e5faf8d6aff4b51527261545"
+              "value": "__cfduid=d82d34460ee55522cb8bf9554c31339b31527361551"
             },
             {
               "key": "accept-encoding",
@@ -31171,13 +31171,13 @@
           "body": {}
         },
         "response": {
-          "id": "4701f0c5-c9fd-4caf-b943-c048f9022897",
+          "id": "8f9f0984-1dbd-4f33-a311-1ca7026bf428",
           "status": "OK",
           "code": 200,
           "header": [
             {
               "key": "Date",
-              "value": "Fri, 25 May 2018 15:19:06 GMT"
+              "value": "Sat, 26 May 2018 19:05:52 GMT"
             },
             {
               "key": "Content-Type",
@@ -31213,7 +31213,7 @@
             },
             {
               "key": "Expires",
-              "value": "Fri, 25 May 2018 19:19:06 GMT"
+              "value": "Sat, 26 May 2018 23:05:52 GMT"
             },
             {
               "key": "X-Content-Type-Options",
@@ -31233,7 +31233,7 @@
             },
             {
               "key": "CF-Cache-Status",
-              "value": "REVALIDATED"
+              "value": "HIT"
             },
             {
               "key": "Expect-CT",
@@ -31245,7 +31245,7 @@
             },
             {
               "key": "CF-RAY",
-              "value": "4208fa788eac7143-ORD"
+              "value": "42128404cc9cb5ae-MEM"
             }
           ],
           "stream": {
@@ -32764,10 +32764,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 165,
+          "responseTime": 24,
           "responseSize": 1510
         },
-        "id": "3846f8d3-ecb5-4f58-9281-71df28c1f7f4",
+        "id": "0673ed16-f00f-4e0a-9a1b-2432d68cef8e",
         "assertions": [
           {
             "assertion": "Status code Assertion for 200"
@@ -32782,15 +32782,15 @@
       },
       {
         "cursor": {
-          "ref": "5d07c9f1-629a-4fbb-8eca-0ca08a38b04f",
+          "ref": "85dc3aac-f1fa-4cb8-823c-80a63f9f2ed2",
           "length": 6,
           "cycles": 1,
           "position": 5,
           "iteration": 0,
-          "httpRequestId": "b26f45ce-6956-4537-8418-1d8fe19e82fb"
+          "httpRequestId": "b139e910-8e2e-4aa2-8bcf-bd7e0caf97e1"
         },
         "item": {
-          "id": "b81aa5e0-ffda-4bf3-bb54-89760164ebe3",
+          "id": "3a76731c-033e-4dba-bc36-466bf62cd097",
           "name": "GET Posts For UserID",
           "request": {
             "description": {
@@ -32891,7 +32891,7 @@
                   "",
                   ""
                 ],
-                "_lastExecutionId": "67a65aff-fe65-4d68-91ce-69462fa6b50b"
+                "_lastExecutionId": "5a077616-049e-44ba-b36d-91413ca7dc09"
               }
             }
           ]
@@ -32934,7 +32934,7 @@
             },
             {
               "key": "cookie",
-              "value": "__cfduid=d2b594ccddee625d6a3e5faf8d6aff4b51527261545"
+              "value": "__cfduid=d82d34460ee55522cb8bf9554c31339b31527361551"
             },
             {
               "key": "accept-encoding",
@@ -32945,13 +32945,13 @@
           "body": {}
         },
         "response": {
-          "id": "af4034d4-6ce6-4e47-bbfa-8cd16efe63a3",
+          "id": "60fa1fca-eeac-4e4d-aa84-640ef710910f",
           "status": "OK",
           "code": 200,
           "header": [
             {
               "key": "Date",
-              "value": "Fri, 25 May 2018 15:19:06 GMT"
+              "value": "Sat, 26 May 2018 19:05:52 GMT"
             },
             {
               "key": "Content-Type",
@@ -32987,7 +32987,7 @@
             },
             {
               "key": "Expires",
-              "value": "Fri, 25 May 2018 19:19:06 GMT"
+              "value": "Sat, 26 May 2018 23:05:52 GMT"
             },
             {
               "key": "X-Content-Type-Options",
@@ -33019,7 +33019,7 @@
             },
             {
               "key": "CF-RAY",
-              "value": "4208fa79b8067143-ORD"
+              "value": "421284052ca3b5ae-MEM"
             }
           ],
           "stream": {
@@ -35754,10 +35754,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 73,
+          "responseTime": 22,
           "responseSize": 2726
         },
-        "id": "b81aa5e0-ffda-4bf3-bb54-89760164ebe3",
+        "id": "3a76731c-033e-4dba-bc36-466bf62cd097",
         "assertions": [
           {
             "assertion": "Status code Assertion for 200"

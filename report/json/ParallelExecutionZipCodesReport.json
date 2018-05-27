@@ -5,7 +5,7 @@
     },
     "item": [
       {
-        "id": "5372191b-d5b1-4a9c-abd0-306fd4af1d12",
+        "id": "32282e72-83c5-4d7a-a77d-39a06e05d331",
         "name": "GET ZipCode Details US",
         "request": {
           "description": {
@@ -105,13 +105,13 @@
                 "    pm.expect(pm.response.responseTime).to.be.below(1000);",
                 "});"
               ],
-              "_lastExecutionId": "cf2d0b68-5969-4abb-ba50-6b043cb014c4"
+              "_lastExecutionId": "5b85c3bc-27a3-43ee-81e6-12ae474ab550"
             }
           }
         ]
       },
       {
-        "id": "c2fe7358-40be-48a9-a537-b81b4d74e300",
+        "id": "5aff9b1e-2ff1-4064-9b5d-d5186262c1fd",
         "name": "GET ZipCode Details IND",
         "request": {
           "description": {
@@ -211,7 +211,7 @@
                 "    pm.expect(pm.response.responseTime).to.be.below(1000);",
                 "});"
               ],
-              "_lastExecutionId": "e36a8e0c-089c-4afb-873b-762f2c0ce75c"
+              "_lastExecutionId": "8061b86c-98a2-4cd6-8acc-ff3548e164a9"
             }
           }
         ]
@@ -273,7 +273,7 @@
     ]
   },
   "globals": {
-    "id": "a71712a3-8648-49d8-aff5-431c7f8e9f76",
+    "id": "4aec0272-3d91-4e2a-96f6-1923376b6a37",
     "values": []
   },
   "run": {
@@ -325,9 +325,9 @@
       }
     },
     "timings": {
-      "responseAverage": 423.5,
-      "started": 1527261556179,
-      "completed": 1527261557188
+      "responseAverage": 106.5,
+      "started": 1527361574409,
+      "completed": 1527361574964
     },
     "executions": [
       {
@@ -340,11 +340,11 @@
           "eof": false,
           "bof": true,
           "cr": false,
-          "ref": "e481a35b-18d5-4dc1-a9e7-b981e31c61a7",
-          "httpRequestId": "e3fef55e-bca6-44ec-ae18-8f1ad72f12f8"
+          "ref": "2c2706d3-d71d-4377-a8ac-3ea83c33d685",
+          "httpRequestId": "2d2603a4-acc9-4df1-a3a3-b9da290a6175"
         },
         "item": {
-          "id": "5372191b-d5b1-4a9c-abd0-306fd4af1d12",
+          "id": "32282e72-83c5-4d7a-a77d-39a06e05d331",
           "name": "GET ZipCode Details US",
           "request": {
             "description": {
@@ -444,7 +444,7 @@
                   "    pm.expect(pm.response.responseTime).to.be.below(1000);",
                   "});"
                 ],
-                "_lastExecutionId": "cf2d0b68-5969-4abb-ba50-6b043cb014c4"
+                "_lastExecutionId": "5b85c3bc-27a3-43ee-81e6-12ae474ab550"
               }
             }
           ]
@@ -490,13 +490,13 @@
           "body": {}
         },
         "response": {
-          "id": "07f6b5cf-b468-481e-906f-9fd2a4180da7",
+          "id": "62469067-048e-43b9-85f6-931e1f5e700d",
           "status": "OK",
           "code": 200,
           "header": [
             {
               "key": "Date",
-              "value": "Fri, 25 May 2018 15:19:19 GMT"
+              "value": "Sat, 26 May 2018 19:06:14 GMT"
             },
             {
               "key": "Server",
@@ -754,10 +754,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 550,
+          "responseTime": 125,
           "responseSize": 217
         },
-        "id": "5372191b-d5b1-4a9c-abd0-306fd4af1d12",
+        "id": "32282e72-83c5-4d7a-a77d-39a06e05d331",
         "assertions": [
           {
             "assertion": "Posts Schema is valid"
@@ -772,15 +772,15 @@
       },
       {
         "cursor": {
-          "ref": "31ff3475-eb1c-456b-88ee-efa11d0dff30",
+          "ref": "b0ba7583-db6f-4625-98de-f9b7789515c7",
           "length": 2,
           "cycles": 1,
           "position": 1,
           "iteration": 0,
-          "httpRequestId": "e2ed510c-b958-457b-be8e-83ed37aefe91"
+          "httpRequestId": "7c3aa26a-8d34-4b7a-b983-7cbdb5352dc6"
         },
         "item": {
-          "id": "c2fe7358-40be-48a9-a537-b81b4d74e300",
+          "id": "5aff9b1e-2ff1-4064-9b5d-d5186262c1fd",
           "name": "GET ZipCode Details IND",
           "request": {
             "description": {
@@ -880,7 +880,7 @@
                   "    pm.expect(pm.response.responseTime).to.be.below(1000);",
                   "});"
                 ],
-                "_lastExecutionId": "e36a8e0c-089c-4afb-873b-762f2c0ce75c"
+                "_lastExecutionId": "8061b86c-98a2-4cd6-8acc-ff3548e164a9"
               }
             }
           ]
@@ -926,13 +926,13 @@
           "body": {}
         },
         "response": {
-          "id": "54e9d0cd-0985-4d6d-b968-f400d2d863c2",
+          "id": "f08399d9-93c9-4145-aa38-b31df92aeea2",
           "status": "OK",
           "code": 200,
           "header": [
             {
               "key": "Date",
-              "value": "Fri, 25 May 2018 15:19:20 GMT"
+              "value": "Sat, 26 May 2018 19:06:14 GMT"
             },
             {
               "key": "Server",
@@ -1326,10 +1326,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 297,
+          "responseTime": 88,
           "responseSize": 353
         },
-        "id": "c2fe7358-40be-48a9-a537-b81b4d74e300",
+        "id": "5aff9b1e-2ff1-4064-9b5d-d5186262c1fd",
         "assertions": [
           {
             "assertion": "Posts Schema is valid"
