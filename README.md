@@ -1,6 +1,7 @@
 # Quick API Automation Framework using Postman and Newman
 Node Application to run the Postman Collection and respective Environments and generate Newman Reports
 
+[![Build Status](https://semaphoreci.com/api/v1/ravivamsi/postmanframework/branches/develop/badge.svg)](https://semaphoreci.com/ravivamsi/postmanframework)
 
 ## Configuration
 
