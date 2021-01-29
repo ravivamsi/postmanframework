@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "newman": "^3.9.3",
-    "npm": "^6.1.0"
+    "npm": "^6.1.0",
+    "newman-reporter-htmlextra": "^1.20.1"
   }
 }
