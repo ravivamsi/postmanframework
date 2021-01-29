@@ -6,8 +6,8 @@ newman.run({
     environment: require('./PostmanEnvironment/Test.postman_environment.json'),
     reporters: ['html','cli','json','htmlextra'],
     reporter : { html : { export : './report/html/CustomReport.html', template: './utils/ReportTemplate/customtemplate.hbs'}, 
-                json: { export: './report/json/CustomReport.json'},
-                htmlextra: { export: './report/htmlExtra/htmlExtra.html'}},
+                json :  { export: './report/json/CustomReport.json'},
+                htmlextra: { export: './report/htmlExtra/htmlExtra.html'} },
     insecure: true, // allow self-signed certs, required in postman too
     timeout: 180000  // set time out
 }).on('start', function (err, args) { // on start of run, log to console
